@@ -1,0 +1,204 @@
+{"frames": {
+
+"Nowete-stand-0.png":
+{
+	"frame": {"x":53,"y":80,"w":23,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":2,"w":23,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-stand-1.png":
+{
+	"frame": {"x":153,"y":78,"w":22,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":2,"w":22,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-stand-2.png":
+{
+	"frame": {"x":78,"y":80,"w":23,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":2,"w":23,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-stand-3.png":
+{
+	"frame": {"x":28,"y":1,"w":24,"h":38},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":0,"w":24,"h":38},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-stand-4.png":
+{
+	"frame": {"x":154,"y":40,"w":20,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":2,"w":20,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-stand-5.png":
+{
+	"frame": {"x":1,"y":80,"w":24,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":2,"w":24,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-stand-6.png":
+{
+	"frame": {"x":53,"y":80,"w":23,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":2,"w":23,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-stand-7.png":
+{
+	"frame": {"x":103,"y":80,"w":23,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":2,"w":23,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-stand-8.png":
+{
+	"frame": {"x":104,"y":41,"w":23,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":2,"w":23,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-stand-9.png":
+{
+	"frame": {"x":54,"y":1,"w":24,"h":38},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":0,"w":24,"h":38},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-stand-10.png":
+{
+	"frame": {"x":128,"y":79,"w":23,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":2,"w":23,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-stand-11.png":
+{
+	"frame": {"x":27,"y":80,"w":24,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":2,"w":24,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-0.png":
+{
+	"frame": {"x":128,"y":1,"w":22,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":2,"w":22,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-1.png":
+{
+	"frame": {"x":153,"y":1,"w":22,"h":37},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":1,"w":22,"h":37},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-2.png":
+{
+	"frame": {"x":80,"y":1,"w":24,"h":38},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":0,"w":24,"h":38},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-3.png":
+{
+	"frame": {"x":106,"y":1,"w":20,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":2,"w":20,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-4.png":
+{
+	"frame": {"x":54,"y":41,"w":23,"h":37},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":1,"w":23,"h":37},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-5.png":
+{
+	"frame": {"x":1,"y":41,"w":25,"h":37},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":1,"w":25,"h":37},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-6.png":
+{
+	"frame": {"x":128,"y":1,"w":22,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":2,"w":22,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-7.png":
+{
+	"frame": {"x":28,"y":41,"w":24,"h":37},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":1,"w":24,"h":37},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-8.png":
+{
+	"frame": {"x":1,"y":1,"w":25,"h":38},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":0,"w":25,"h":38},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-9.png":
+{
+	"frame": {"x":129,"y":40,"w":23,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":2,"w":23,"h":36},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-10.png":
+{
+	"frame": {"x":79,"y":41,"w":23,"h":37},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":1,"w":23,"h":37},
+	"sourceSize": {"w":34,"h":38}
+},
+"Nowete-walk-11.png":
+{
+	"frame": {"x":1,"y":41,"w":25,"h":37},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":1,"w":25,"h":37},
+	"sourceSize": {"w":34,"h":38}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "hero.png",
+	"format": "RGBA8888",
+	"size": {"w":176,"h":117},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:60690643d4ad2c268cfcdd8697573eab:67cadbad1aad4be8142b98bb1b1e9037:eec64b416d3f54b5cb5181ef71d8f236$"
+}
+}
