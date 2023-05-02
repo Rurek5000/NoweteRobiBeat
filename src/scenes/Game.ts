@@ -47,15 +47,14 @@ export default class Game extends Phaser.Scene {
             undefined,
             undefined,
             undefined,
-            85
+            130
           );
         }
       }
     });
 
-    this.cameras.main.scrollY = -150;
-    this.cameras.main.zoom = 1.5;
-
+    this.cameras.main.zoom = 1.3;
+    // this.cameras.main.setOrigin(0, 0);
     this.matter.world.convertTilemapLayer(ground);
   }
 

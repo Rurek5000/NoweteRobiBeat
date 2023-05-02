@@ -7,7 +7,7 @@ const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   parent: "app",
   width: 800,
-  height: 505,
+  height: 600,
   physics: {
     default: "matter",
     matter: {
