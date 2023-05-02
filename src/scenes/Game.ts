@@ -16,8 +16,6 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
-    this.createHeroAnimation();
-
     const map = this.make.tilemap({ key: "tilemap" });
     const tileset = map.addTilesetImage("Tiles", "tiles");
     const baseColor = map.addTilesetImage("Base Color", "base-color");
@@ -42,7 +40,7 @@ export default class Game extends Phaser.Scene {
       switch (name) {
         case "spawn": {
           this.hero = new Hero(this, x + width * 0.5, y, TextureKeys.Hero);
-          this.hero.play("player-idle").setFixedRotation();
+          this.hero.play(AnimationKeys.HeroIdle).setFixedRotation();
           this.cameras.main.startFollow(
             this.hero,
             undefined,
@@ -67,44 +65,18 @@ export default class Game extends Phaser.Scene {
     const speed = 0.4;
     if (this.cursors.left.isDown) {
       this.hero.flipX = true;
-      this.hero.setVelocityX(-speed);
-      this.hero.play("player-walk", true);
-      this.hero.setOrigin(0.6, 0.5);
+      this.hero
+        .play(AnimationKeys.HeroWalk, true)
+        .setOrigin(0.6, 0.5)
+        .setVelocityX(-speed);
     } else if (this.cursors.right.isDown) {
       this.hero.flipX = false;
-      this.hero.setVelocityX(speed);
-      this.hero.setOrigin(0.4, 0.5);
-
-      this.hero.play("player-walk", true);
+      this.hero
+        .play(AnimationKeys.HeroWalk, true)
+        .setOrigin(0.4, 0.5)
+        .setVelocityX(speed);
     } else {
-      this.hero.setVelocityX(0);
-      this.hero.play("player-idle", true);
+      this.hero.play(AnimationKeys.HeroIdle, true).setVelocityX(0);
     }
-  }
-
-  private createHeroAnimation() {
-    this.anims.create({
-      key: AnimationKeys.PlayerIdle,
-      frameRate: 6,
-      frames: this.anims.generateFrameNames("hero", {
-        start: 0,
-        end: 11,
-        prefix: "Nowete-stand-",
-        suffix: ".png",
-      }),
-      repeat: -1,
-    });
-
-    this.anims.create({
-      key: AnimationKeys.PlayerWalk,
-      frameRate: 6,
-      frames: this.anims.generateFrameNames("hero", {
-        start: 0,
-        end: 11,
-        prefix: "Nowete-walk-",
-        suffix: ".png",
-      }),
-      repeat: -1,
-    });
   }
 }

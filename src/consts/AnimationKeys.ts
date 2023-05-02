@@ -1,6 +1,6 @@
 enum AnimationKeys {
-  PlayerIdle = "player-idle",
-  PlayerWalk = "player-walk",
+  HeroIdle = "hero-idle",
+  HeroWalk = "hero-walk",
 }
 
 export default AnimationKeys;
