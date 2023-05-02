@@ -1,5 +1,7 @@
 import Phaser from "phaser";
 import AnimationKeys from "../consts/AnimationKeys";
+import Hero from "../game/Hero";
+import TextureKeys from "../consts/TextureKeys";
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -39,11 +41,16 @@ export default class Game extends Phaser.Scene {
       const { x = 0, y = 0, name, width = 0 } = objData;
       switch (name) {
         case "spawn": {
-          this.hero = this.matter.add
-            .sprite(x + width * 0.5, y, "hero")
-            .play("player-idle")
-            .setFixedRotation();
-          this.cameras.main.startFollow(this.hero);
+          this.hero = new Hero(this, x + width * 0.5, y, TextureKeys.Hero);
+          this.hero.play("player-idle").setFixedRotation();
+          this.cameras.main.startFollow(
+            this.hero,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            85
+          );
         }
       }
     });
