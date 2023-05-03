@@ -36,9 +36,8 @@ export default class Game extends Phaser.Scene {
 
     const objectsLayer = map.getObjectLayer("objects");
     const camera = this.cameras.main;
-    console.log(objectsLayer.objects);
     objectsLayer.objects.forEach((objData) => {
-      const { x = 0, y = 0, name, width = 0 } = objData;
+      const { x = 0, y = 0, name, width = 0, height = 0 } = objData;
       switch (name) {
         case "spawn":
           {
@@ -56,24 +55,29 @@ export default class Game extends Phaser.Scene {
           break;
         case "worldBound":
           {
-            if (
-              typeof objData.x !== "undefined" &&
-              typeof objData.width !== "undefined"
-            ) {
-              camera.setBounds(
-                objData.x,
-                0,
-                objData.width,
-                Number(this.game.config.height)
-              );
-              this.matter.world.setBounds(
-                objData.x,
-                0,
-                objData.width,
-                Number(this.game.config.height),
-                16
-              );
-            }
+            camera.setBounds(x, 0, width, Number(this.game.config.height));
+            this.matter.world.setBounds(
+              x,
+              0,
+              width,
+              Number(this.game.config.height),
+              16
+            );
+          }
+          break;
+        case "home":
+          {
+            console.log(height);
+            this.matter.add.rectangle(
+              x + width * 0.5,
+              y + height * 0.5,
+              width,
+              height,
+              {
+                isStatic: true,
+                isSensor: true,
+              }
+            );
           }
           break;
       }
@@ -89,5 +93,7 @@ export default class Game extends Phaser.Scene {
     if (this.cursors.left.isDown) this.hero.goLeft();
     else if (this.cursors.right.isDown) this.hero.goRight();
     else this.hero.stay();
+
+    this.matter.overlap(this.hero);
   }
 }
