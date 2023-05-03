@@ -5,7 +5,7 @@ import TextureKeys from "../consts/TextureKeys";
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
-  private hero?: Phaser.Physics.Matter.Sprite;
+  private hero?: Hero;
 
   constructor() {
     super("game");
@@ -35,47 +35,59 @@ export default class Game extends Phaser.Scene {
     ground.setCollisionByProperty({ collides: true });
 
     const objectsLayer = map.getObjectLayer("objects");
+    const camera = this.cameras.main;
+    console.log(objectsLayer.objects);
     objectsLayer.objects.forEach((objData) => {
       const { x = 0, y = 0, name, width = 0 } = objData;
       switch (name) {
-        case "spawn": {
-          this.hero = new Hero(this, x + width * 0.5, y, TextureKeys.Hero);
-          this.hero.play(AnimationKeys.HeroIdle).setFixedRotation();
-          this.cameras.main.startFollow(
-            this.hero,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            130
-          );
-        }
+        case "spawn":
+          {
+            this.hero = new Hero(this, x + width * 0.5, y, TextureKeys.Hero);
+            this.hero.play(AnimationKeys.HeroIdle).setFixedRotation();
+            camera.startFollow(
+              this.hero,
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              130
+            );
+          }
+          break;
+        case "worldBound":
+          {
+            if (
+              typeof objData.x !== "undefined" &&
+              typeof objData.width !== "undefined"
+            ) {
+              camera.setBounds(
+                objData.x,
+                0,
+                objData.width,
+                Number(this.game.config.height)
+              );
+              this.matter.world.setBounds(
+                objData.x,
+                0,
+                objData.width,
+                Number(this.game.config.height),
+                16
+              );
+            }
+          }
+          break;
       }
     });
 
     this.cameras.main.zoom = 1.3;
-    // this.cameras.main.setOrigin(0, 0);
     this.matter.world.convertTilemapLayer(ground);
   }
 
   update() {
     if (!this.hero) return;
 
-    const speed = 0.4;
-    if (this.cursors.left.isDown) {
-      this.hero.flipX = true;
-      this.hero
-        .play(AnimationKeys.HeroWalk, true)
-        .setOrigin(0.6, 0.5)
-        .setVelocityX(-speed);
-    } else if (this.cursors.right.isDown) {
-      this.hero.flipX = false;
-      this.hero
-        .play(AnimationKeys.HeroWalk, true)
-        .setOrigin(0.4, 0.5)
-        .setVelocityX(speed);
-    } else {
-      this.hero.play(AnimationKeys.HeroIdle, true).setVelocityX(0);
-    }
+    if (this.cursors.left.isDown) this.hero.goLeft();
+    else if (this.cursors.right.isDown) this.hero.goRight();
+    else this.hero.stay();
   }
 }
