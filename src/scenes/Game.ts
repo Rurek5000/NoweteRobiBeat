@@ -99,7 +99,5 @@ export default class Game extends Phaser.Scene {
     if (!this.playerController) return;
 
     this.playerController.update(dt);
-
-    this.matter.overlap(this.hero);
   }
 }
