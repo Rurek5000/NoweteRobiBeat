@@ -2,10 +2,12 @@ import Phaser from "phaser";
 import AnimationKeys from "../consts/AnimationKeys";
 import Hero from "../game/Hero";
 import TextureKeys from "../consts/TextureKeys";
+import PlayerController from "../game/PlayerController";
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   private hero?: Hero;
+  private playerController?: PlayerController;
 
   constructor() {
     super("game");
@@ -43,6 +45,12 @@ export default class Game extends Phaser.Scene {
           {
             this.hero = new Hero(this, x + width * 0.5, y, TextureKeys.Hero);
             this.hero.play(AnimationKeys.HeroIdle).setFixedRotation();
+
+            this.playerController = new PlayerController(
+              this.hero,
+              this.cursors
+            );
+
             camera.startFollow(
               this.hero,
               undefined,
@@ -87,12 +95,10 @@ export default class Game extends Phaser.Scene {
     this.matter.world.convertTilemapLayer(ground);
   }
 
-  update() {
-    if (!this.hero) return;
+  update(t: number, dt: number) {
+    if (!this.playerController) return;
 
-    if (this.cursors.left.isDown) this.hero.goLeft();
-    else if (this.cursors.right.isDown) this.hero.goRight();
-    else this.hero.stay();
+    this.playerController.update(dt);
 
     this.matter.overlap(this.hero);
   }

@@ -1,7 +1,6 @@
 import Phaser from "phaser";
 import TextureKeys from "../consts/TextureKeys";
 import SceneKeys from "../consts/SceneKeys";
-import AnimationKeys from "../consts/AnimationKeys";
 
 export default class Preloader extends Phaser.Scene {
   constructor() {
@@ -23,33 +22,5 @@ export default class Preloader extends Phaser.Scene {
   }
   create() {
     this.scene.start(SceneKeys.Game);
-
-    this.createHeroAnimation();
-  }
-
-  private createHeroAnimation() {
-    this.anims.create({
-      key: AnimationKeys.HeroIdle,
-      frameRate: 6,
-      frames: this.anims.generateFrameNames("hero", {
-        start: 0,
-        end: 11,
-        prefix: "Nowete-stand-",
-        suffix: ".png",
-      }),
-      repeat: -1,
-    });
-
-    this.anims.create({
-      key: AnimationKeys.HeroWalk,
-      frameRate: 6,
-      frames: this.anims.generateFrameNames("hero", {
-        start: 0,
-        end: 11,
-        prefix: "Nowete-walk-",
-        suffix: ".png",
-      }),
-      repeat: -1,
-    });
   }
 }
