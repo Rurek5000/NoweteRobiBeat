@@ -3,6 +3,7 @@ import AnimationKeys from "../consts/AnimationKeys";
 import Hero from "../game/Hero";
 import TextureKeys from "../consts/TextureKeys";
 import PlayerController from "../game/PlayerController";
+import FloatingText from "../game/FloatingText";
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -75,8 +76,7 @@ export default class Game extends Phaser.Scene {
           break;
         case "home":
           {
-            console.log(height);
-            this.matter.add.rectangle(
+            const home = this.matter.add.rectangle(
               x + width * 0.5,
               y + height * 0.5,
               width,
@@ -86,6 +86,14 @@ export default class Game extends Phaser.Scene {
                 isSensor: true,
               }
             );
+
+            new FloatingText(this, home, "Test");
+
+            // this.add.text(x + width * 0.5, y + height * 0.5, "dupsko", {
+            //   fontSize: "24px",
+            //   color: "#fff",
+            //   fontFamily: "Pixel-Art",
+            // });
           }
           break;
       }
