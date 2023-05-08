@@ -9,6 +9,7 @@ export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   private hero!: Hero;
   private playerController?: PlayerController;
+  private home!: FloatingText;
 
   constructor() {
     super("game");
@@ -76,7 +77,7 @@ export default class Game extends Phaser.Scene {
           break;
         case "home":
           {
-            const home = this.matter.add.rectangle(
+            const rec = this.matter.add.rectangle(
               x + width * 0.5,
               y + height * 0.5,
               width,
@@ -87,13 +88,7 @@ export default class Game extends Phaser.Scene {
               }
             );
 
-            const text = new FloatingText(this, home, "Test");
-
-            home.label = "home";
-            home.setOnCollideWith(this.hero.body, () => {
-              console.log("Ło kurwa kolizyjo");
-              text.showText();
-            });
+            this.home = new FloatingText(this, rec, "Home (press spacebar)");
           }
           break;
       }
@@ -105,7 +100,11 @@ export default class Game extends Phaser.Scene {
 
   update(t: number, dt: number) {
     if (!this.playerController) return;
-
     this.playerController.update(dt);
+
+    this.matter.overlap(this.home.obj, [this.hero], () => {
+      this.home.showText();
+      if (this.cursors.space.isDown) console.log("test");
+    });
   }
 }

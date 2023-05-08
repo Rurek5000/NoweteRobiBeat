@@ -2,13 +2,13 @@ import Phaser from "phaser";
 
 export default class FloatingText {
   private scene: Phaser.Scene;
-  private obj: MatterJS.BodyType;
   private x: number;
   private y: number;
   private text: string;
-  private visibility: boolean;
   private style: Phaser.Types.GameObjects.Text.TextStyle;
   private textObj!: Phaser.GameObjects.Text;
+  private visibility: boolean;
+  public obj: MatterJS.BodyType;
 
   constructor(scene: Phaser.Scene, obj: MatterJS.BodyType, text: string) {
     this.scene = scene;
@@ -17,9 +17,11 @@ export default class FloatingText {
     this.y = obj.position.y;
     this.text = text;
     this.style = {
-      fontSize: "16px",
+      fontSize: "10px",
       color: "#fff",
       fontFamily: "font1",
+      align: "center",
+      wordWrap: { width: 100, useAdvancedWrap: true },
     };
     this.visibility = false;
 
@@ -31,9 +33,13 @@ export default class FloatingText {
   }
 
   showText() {
-    this.textObj.alpha = 1;
-    window.setTimeout(() => {
-      this.textObj.alpha = 0;
-    }, 2000);
+    if (!this.visibility) {
+      this.textObj.alpha = 1;
+      this.visibility = true;
+      window.setTimeout(() => {
+        this.textObj.alpha = 0;
+        this.visibility = false;
+      }, 2000);
+    }
   }
 }
