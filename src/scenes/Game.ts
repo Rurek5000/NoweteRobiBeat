@@ -7,7 +7,7 @@ import FloatingText from "../game/FloatingText";
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
-  private hero?: Hero;
+  private hero!: Hero;
   private playerController?: PlayerController;
 
   constructor() {
@@ -87,13 +87,13 @@ export default class Game extends Phaser.Scene {
               }
             );
 
-            new FloatingText(this, home, "Test");
+            const text = new FloatingText(this, home, "Test");
 
-            // this.add.text(x + width * 0.5, y + height * 0.5, "dupsko", {
-            //   fontSize: "24px",
-            //   color: "#fff",
-            //   fontFamily: "Pixel-Art",
-            // });
+            home.label = "home";
+            home.setOnCollideWith(this.hero.body, () => {
+              console.log("Ło kurwa kolizyjo");
+              text.showText();
+            });
           }
           break;
       }

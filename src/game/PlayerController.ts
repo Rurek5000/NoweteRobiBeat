@@ -13,7 +13,7 @@ export default class PlayerController {
   constructor(sprite: Phaser.Physics.Matter.Sprite, cursors: CursorKeys) {
     this.sprite = sprite;
     this.cursors = cursors;
-    this.speed = 6;
+    this.speed = 1;
     this.createAnimations();
     this.stateMachine = new StateMachine(this, "player");
 
@@ -27,6 +27,13 @@ export default class PlayerController {
         onUpdate: this.walkOnUpdate,
       })
       .setState("idle");
+
+    this.sprite.setOnCollide((data: MatterJS.ICollisionPair) => {
+      const body = data.bodyB as MatterJS.BodyType;
+      const gameObject = body.gameObject;
+
+      if (!gameObject) return;
+    });
   }
 
   update(dt: number) {
