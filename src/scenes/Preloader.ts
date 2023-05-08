@@ -21,6 +21,6 @@ export default class Preloader extends Phaser.Scene {
     this.load.tilemapTiledJSON(TextureKeys.Tilemap, "assets/main.json");
   }
   create() {
-    this.scene.start(SceneKeys.Game);
+    this.scene.start(SceneKeys.Street);
   }
 }

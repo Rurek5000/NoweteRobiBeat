@@ -4,6 +4,7 @@ import Hero from "../game/Hero";
 import TextureKeys from "../consts/TextureKeys";
 import PlayerController from "../game/PlayerController";
 import FloatingText from "../game/FloatingText";
+import SceneKeys from "../consts/SceneKeys";
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -12,7 +13,7 @@ export default class Game extends Phaser.Scene {
   private home!: FloatingText;
 
   constructor() {
-    super("game");
+    super("street");
   }
 
   init() {
@@ -104,7 +105,7 @@ export default class Game extends Phaser.Scene {
 
     this.matter.overlap(this.home.obj, [this.hero], () => {
       this.home.showText();
-      if (this.cursors.space.isDown) console.log("test");
+      if (this.cursors.space.isDown) this.scene.start(SceneKeys.GameOver);
     });
   }
 }

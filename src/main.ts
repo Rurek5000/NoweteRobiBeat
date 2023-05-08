@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 
 import Street from "./scenes/Street";
+import GameOver from "./scenes/GameOver";
 import Preloader from "./scenes/Preloader";
 
 const config: Phaser.Types.Core.GameConfig = {
@@ -14,7 +15,7 @@ const config: Phaser.Types.Core.GameConfig = {
       debug: true,
     },
   },
-  scene: [Preloader, Street],
+  scene: [Preloader, Street, GameOver],
 };
 
 export default new Phaser.Game(config);
