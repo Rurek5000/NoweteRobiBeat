@@ -1,6 +1,7 @@
 enum SceneKeys {
   Preloader = "preloader",
   Street = "street",
+  Forge = "forge",
   GameOver = "gameOver",
 }
 

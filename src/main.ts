@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 
 import Street from "./scenes/Street";
+import Forge from "./scenes/Forge";
 import GameOver from "./scenes/GameOver";
 import Preloader from "./scenes/Preloader";
 
