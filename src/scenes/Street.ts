@@ -105,7 +105,7 @@ export default class Game extends Phaser.Scene {
 
     this.matter.overlap(this.home.obj, [this.hero], () => {
       this.home.showText();
-      if (this.cursors.space.isDown) this.scene.start(SceneKeys.GameOver);
+      if (this.cursors.space.isDown) this.scene.start(SceneKeys.Forge);
     });
   }
 }

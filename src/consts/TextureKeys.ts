@@ -6,14 +6,7 @@ enum TextureKeys {
   Props1 = "props-01",
   BackgroundProps = "background-props",
   Tilemap = "tilemap",
-  Forge1 = "1",
-  Forge2 = "2",
-  Forge3 = "3",
-  Forge4 = "4",
-  Forge5 = "5",
-  Spritesheet = "spritesheet",
-  Tilesetx1 = "tileset-x1",
-  Fo = "fo",
+  Forge = "forge",
 }
 
 export default TextureKeys;

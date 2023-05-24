@@ -16,7 +16,7 @@ const config: Phaser.Types.Core.GameConfig = {
       debug: true,
     },
   },
-  scene: [Preloader, Street, GameOver],
+  scene: [Preloader, Street, Forge, GameOver],
 };
 
 export default new Phaser.Game(config);
