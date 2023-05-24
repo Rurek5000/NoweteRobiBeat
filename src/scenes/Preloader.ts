@@ -13,6 +13,13 @@ export default class Preloader extends Phaser.Scene {
       "assets/hero/hero.png",
       "assets/hero/hero.json"
     );
+
+    this.load.atlas(
+      TextureKeys.Hobo,
+      "assets/npc/hobo.png",
+      "assets/npc/hobo.json"
+    );
+
     this.load.image(TextureKeys.Tiles, "assets/Tiles.png");
     this.load.image(TextureKeys.BaseColor, "assets/Base-Color.png");
     this.load.image(TextureKeys.Buildings, "assets/Buildings.png");

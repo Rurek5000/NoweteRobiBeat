@@ -1,5 +1,6 @@
 enum TextureKeys {
   Hero = "hero",
+  Hobo = "hobo",
   Tiles = "tiles",
   BaseColor = "base-color",
   Buildings = "buildings",

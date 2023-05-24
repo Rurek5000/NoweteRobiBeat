@@ -859,26 +859,15 @@
                  "y":414
                 }, 
                 {
-                 "height":47.3333333333334,
+                 "height":47.3333,
                  "id":9,
                  "name":"worldBound",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":1055.91304347826,
-                 "x":256.020833333333,
-                 "y":384.520833333333
-                }, 
-                {
-                 "height":0,
-                 "id":10,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":53.3333333333333,
-                 "y":127.333333333333
+                 "width":1055.91,
+                 "x":256.021,
+                 "y":384.521
                 }, 
                 {
                  "height":31.125,
@@ -890,6 +879,17 @@
                  "width":21,
                  "x":277.625,
                  "y":400.375
+                }, 
+                {
+                 "height":16.5,
+                 "id":13,
+                 "name":"hoboSpawn",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":831.333333333333,
+                 "y":413.75
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -898,7 +898,7 @@
          "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":13,
+ "nextobjectid":14,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",
