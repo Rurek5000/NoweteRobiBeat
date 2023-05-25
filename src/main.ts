@@ -2,7 +2,7 @@ import Phaser from "phaser";
 
 import Street from "./scenes/Street";
 import Forge from "./scenes/Forge";
-import GameOver from "./scenes/GameOver";
+import DialogModal from "./scenes/DialogModal";
 import Preloader from "./scenes/Preloader";
 
 const config: Phaser.Types.Core.GameConfig = {
@@ -16,7 +16,7 @@ const config: Phaser.Types.Core.GameConfig = {
       debug: true,
     },
   },
-  scene: [Preloader, Street, Forge, GameOver],
+  scene: [Preloader, Street, Forge, DialogModal],
 };
 
 export default new Phaser.Game(config);

@@ -131,6 +131,7 @@ export default class Game extends Phaser.Scene {
     });
     this.matter.overlap(this.hobo, [this.hero], () => {
       this.hobo.showText();
+      if (this.cursors.space.isDown) this.scene.launch("dialogModal");
     });
   }
 }
