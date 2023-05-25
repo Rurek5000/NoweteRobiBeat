@@ -5,11 +5,12 @@ import TextureKeys from "../consts/TextureKeys";
 import PlayerController from "../game/PlayerController";
 import FloatingText from "../game/FloatingText";
 import SceneKeys from "../consts/SceneKeys";
+import Npc from "../game/Npc";
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   private hero!: Hero;
-  private hobo!: Hero;
+  private hobo!: Npc;
   private playerController?: PlayerController;
   private home!: FloatingText;
 
@@ -96,12 +97,7 @@ export default class Game extends Phaser.Scene {
           break;
         case "hoboSpawn":
           {
-            this.hobo = new Hero(
-              this,
-              x + width * 0.5,
-              y - 8,
-              TextureKeys.Hobo
-            );
+            this.hobo = new Npc(this, x + width * 0.5, y - 8, TextureKeys.Hobo);
             this.hobo.setStatic(true);
             this.hobo.setSensor(true);
             this.hobo.anims.create({
@@ -132,6 +128,9 @@ export default class Game extends Phaser.Scene {
     this.matter.overlap(this.home.obj, [this.hero], () => {
       this.home.showText();
       if (this.cursors.space.isDown) this.scene.start(SceneKeys.Forge);
+    });
+    this.matter.overlap(this.hobo, [this.hero], () => {
+      this.hobo.showText();
     });
   }
 }
