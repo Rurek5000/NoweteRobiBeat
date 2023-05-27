@@ -1,0 +1,20 @@
+{
+  "0": {
+    "isHero": true,
+    "image": "kacper",
+    "name": "Kacper",
+    "content": "Cześć, dobrze Cię widzieć, fajnie, że się wyświetlasz :D"
+  },
+  "1": {
+    "isHero": false,
+    "image": "pawel",
+    "name": "Paweł",
+    "content": "Baja!"
+  },
+  "2": {
+    "isHero": false,
+    "image": "pawel",
+    "name": "Paweł",
+    "content": "Baja!"
+  }
+}
