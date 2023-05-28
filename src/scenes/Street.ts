@@ -6,6 +6,7 @@ import PlayerController from "../game/PlayerController";
 import FloatingText from "../game/FloatingText";
 import SceneKeys from "../consts/SceneKeys";
 import Npc from "../game/Npc";
+import { sharedInstance as events } from "./EventCenter";
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -135,6 +136,10 @@ export default class Game extends Phaser.Scene {
         this.scene.pause();
         this.scene.launch("dialogModal", { name: "temp" });
       }
+    });
+
+    events.on("close", () => {
+      this.scene.resume();
     });
   }
 }

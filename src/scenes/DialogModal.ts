@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { sharedInstance as events } from "./EventCenter";
 
 export default class DialogModal extends Phaser.Scene {
   private bg!: Phaser.Physics.Matter.Factory.rectangle;
@@ -6,7 +7,7 @@ export default class DialogModal extends Phaser.Scene {
   private index!: number;
   private image!: any;
   private text!: any;
-  private data!: any;
+  private jsonData!: any;
   private spaceKeyClicked!: boolean;
 
   constructor() {
@@ -39,7 +40,7 @@ export default class DialogModal extends Phaser.Scene {
     fetch(`./assets/dialog/${data.name}.json`)
       .then((response) => response.json())
       .then((data) => {
-        this.data = data;
+        this.jsonData = data;
         this.showSpeech(data, this.index, this.bg);
       })
       .catch((error) => {
@@ -49,15 +50,16 @@ export default class DialogModal extends Phaser.Scene {
   update(t: number, dt: number) {
     if (this.cursors.space.isDown && !this.spaceKeyClicked) {
       console.log(this.index);
-      if (this.index < Object.keys(this.data).length) {
+      if (this.index < Object.keys(this.jsonData).length) {
         this.spaceKeyClicked = true;
-        this.showSpeech(this.data, this.index, this.bg);
+        this.showSpeech(this.jsonData, this.index, this.bg);
         this.index++;
         window.setTimeout(() => {
           this.spaceKeyClicked = false;
         }, 50);
       } else {
         this.scene.stop();
+        events.emit("close");
       }
     }
   }
