@@ -49,7 +49,6 @@ export default class DialogModal extends Phaser.Scene {
   }
   update(t: number, dt: number) {
     if (this.cursors.space.isDown && !this.spaceKeyClicked) {
-      console.log(this.index);
       if (this.index < Object.keys(this.jsonData).length) {
         this.spaceKeyClicked = true;
         this.showSpeech(this.jsonData, this.index, this.bg);

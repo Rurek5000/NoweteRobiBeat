@@ -124,7 +124,7 @@ export default class Game extends Phaser.Scene {
   }
 
   update(t: number, dt: number) {
-    this.hobo.randomWalk();
+    // this.hobo.randomWalk();
 
     if (!this.playerController) return;
     this.playerController.update(dt);

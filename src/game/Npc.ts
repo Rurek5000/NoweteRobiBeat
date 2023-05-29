@@ -22,10 +22,6 @@ export default class Npc extends Phaser.Physics.Matter.Sprite {
     );
   }
 
-  update() {
-    console.log("test");
-  }
-
   showText() {
     this.floatingText.showText();
   }
@@ -49,8 +45,5 @@ export default class Npc extends Phaser.Physics.Matter.Sprite {
   private goRight() {
     this.flipX = false;
     this.x++;
-  }
-  private stay() {
-    console.log("stay");
   }
 }
