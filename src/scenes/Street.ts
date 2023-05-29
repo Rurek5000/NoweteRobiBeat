@@ -13,7 +13,7 @@ export default class Game extends Phaser.Scene {
   private hero!: Hero;
   private hobo!: Npc;
   private playerController?: PlayerController;
-  private home!: FloatingText;
+  private forge!: FloatingText;
 
   constructor() {
     super("street");
@@ -80,7 +80,7 @@ export default class Game extends Phaser.Scene {
             );
           }
           break;
-        case "home":
+        case "forge":
           {
             const rec = this.matter.add.rectangle(
               x + width * 0.5,
@@ -93,7 +93,7 @@ export default class Game extends Phaser.Scene {
               }
             );
 
-            this.home = new FloatingText(this, rec, "Home (press spacebar)");
+            this.forge = new FloatingText(this, rec, "Kuźnia (spacja)");
           }
           break;
         case "hoboSpawn":
@@ -129,8 +129,8 @@ export default class Game extends Phaser.Scene {
     if (!this.playerController) return;
     this.playerController.update(dt);
 
-    this.matter.overlap(this.home.obj, [this.hero], () => {
-      this.home.showText();
+    this.matter.overlap(this.forge.obj, [this.hero], () => {
+      this.forge.showText();
       if (this.cursors.space.isDown) this.scene.start(SceneKeys.Forge);
     });
     this.matter.overlap(this.hobo, [this.hero], () => {

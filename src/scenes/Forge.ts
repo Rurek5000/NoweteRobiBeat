@@ -24,10 +24,14 @@ export default class Forge extends Phaser.Scene {
     const map = this.make.tilemap({ key: "forge" });
     const tileset = map.addTilesetImage("Tiles", "tiles");
     const buildings = map.addTilesetImage("Buildings", "buildings");
+    const baseColor = map.addTilesetImage("Base Color", "base-color-forge");
+    const forge = map.addTilesetImage("forge", "forge");
+    const forgeProps = map.addTilesetImage("Forge Props", "forge-props");
     const decoration = map.addTilesetImage("Props-01", "props-01");
 
-    map.createLayer("bg", buildings);
-    map.createLayer("decoration", decoration);
+    map.createLayer("bg", [buildings, baseColor]);
+    map.createLayer("bg_2", forge);
+    map.createLayer("decoration", [decoration, forgeProps]);
 
     const ground = map.createLayer("ground", tileset);
     ground.setCollisionByProperty({ collides: true });
