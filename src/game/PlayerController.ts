@@ -13,7 +13,7 @@ export default class PlayerController {
   constructor(sprite: Phaser.Physics.Matter.Sprite, cursors: CursorKeys) {
     this.sprite = sprite;
     this.cursors = cursors;
-    this.speed = 1;
+    this.speed = 2;
     this.createAnimations();
     this.stateMachine = new StateMachine(this, "player");
 

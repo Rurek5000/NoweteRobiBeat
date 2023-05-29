@@ -113,6 +113,7 @@ export default class Game extends Phaser.Scene {
               repeat: -1,
             });
             this.hobo.play(AnimationKeys.HoboIdle);
+            // this.hobo.randomWalk();
           }
           break;
       }
@@ -123,6 +124,8 @@ export default class Game extends Phaser.Scene {
   }
 
   update(t: number, dt: number) {
+    this.hobo.randomWalk();
+
     if (!this.playerController) return;
     this.playerController.update(dt);
 
