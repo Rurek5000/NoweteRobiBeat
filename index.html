@@ -38,9 +38,36 @@
         background-image: url("/public/assets/bg.jpg");
         background-size: cover;
       }
-      canvas {
+      #app {
+        position: relative;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-bottom: 100px;
-        border: 4px solid grey;
+      }
+      #app::before,
+      #app::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      #app::before {
+        background-color: #018092; /* Kolor tła */
+        box-shadow: 0 0 10px #018092, 0 0 20px #018092, 0 0 40px #018092,
+          0 0 80px #018092; /* Efekt świetlny */
+        opacity: 0.5; /* Przezroczystość */
+        z-index: -1;
+      }
+
+      #app::after {
+        border: 2px solid #018092; /* Kolor obramowania */
+        content: "";
+        z-index: -2;
       }
     </style>
   </body>
