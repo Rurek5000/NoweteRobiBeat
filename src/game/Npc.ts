@@ -5,6 +5,7 @@ export default class Npc extends Phaser.Physics.Matter.Sprite {
   private floatingText!: FloatingText;
   private index!: number;
   private rec!: MatterJS.BodyType;
+  private isLeft!: boolean;
   constructor(scene: Phaser.Scene, x: number, y: number, texture: string) {
     super(scene.matter.world, x, y, texture);
     this.rec = scene.matter.add.rectangle(x, y, this.width, this.height, {
@@ -12,8 +13,8 @@ export default class Npc extends Phaser.Physics.Matter.Sprite {
       isSensor: true,
     });
     this.index = 0;
-    const img = this.scene.add.existing(this);
-    console.log(this);
+    this.isLeft = true;
+    this.scene.add.existing(this);
     this.floatingText = new FloatingText(
       scene,
       this.rec,
@@ -21,22 +22,29 @@ export default class Npc extends Phaser.Physics.Matter.Sprite {
     );
   }
 
+  update() {
+    console.log("test");
+  }
+
   showText() {
     this.floatingText.showText();
   }
 
   randomWalk() {
-    if (this.index < 300) {
-      this.goLeft();
+    if (this.index > 450) {
+      this.index = 0;
+      this.isLeft = !this.isLeft;
     }
+
+    if (this.isLeft) this.goLeft();
+    else this.goRight();
 
     this.index++;
   }
 
   private goLeft() {
     this.flipX = true;
-    // this.x--;
-    // this.rec.position.x--;
+    this.x--;
   }
   private goRight() {
     this.flipX = false;
