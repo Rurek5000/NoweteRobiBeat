@@ -1,6 +1,7 @@
 enum TextureKeys {
   Hero = "hero",
   Hobo = "hobo",
+  Rurek = "rurek",
   Tiles = "tiles",
   BaseColor = "base-color",
   BaseColorForge = "base-color-forge",

@@ -877,19 +877,19 @@
                  "type":"",
                  "visible":true,
                  "width":21,
-                 "x":1273.45833333333,
-                 "y":399.041666666667
+                 "x":1273.46,
+                 "y":399.042
                 }, 
                 {
                  "height":16.5,
                  "id":13,
-                 "name":"hoboSpawn",
+                 "name":"rurek",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":16,
-                 "x":831.333,
-                 "y":413.75
+                 "x":928.242090909091,
+                 "y":414.931818181818
                 }],
          "opacity":1,
          "type":"objectgroup",

@@ -12,7 +12,7 @@ import { setChapter } from "../globals";
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   private hero!: Hero;
-  private hobo!: Npc;
+  private rurek!: Npc;
   private playerController?: PlayerController;
   private forge!: FloatingText;
 
@@ -97,24 +97,28 @@ export default class Game extends Phaser.Scene {
             this.forge = new FloatingText(this, rec, "Kuźnia (spacja)");
           }
           break;
-        case "hoboSpawn":
+        case "rurek":
           {
-            this.hobo = new Npc(this, x + width * 0.5, y - 8, TextureKeys.Hobo);
-            this.hobo.setStatic(true);
-            this.hobo.setSensor(true);
-            this.hobo.anims.create({
-              key: AnimationKeys.HoboIdle,
-              frameRate: 6,
-              frames: this.hobo.anims.generateFrameNames("hobo", {
+            this.rurek = new Npc(
+              this,
+              x + width * 0.5,
+              y - 8,
+              TextureKeys.Rurek
+            );
+            this.rurek.setStatic(true);
+            this.rurek.setSensor(true);
+            this.rurek.anims.create({
+              key: AnimationKeys.RurekIdle,
+              frameRate: 4,
+              frames: this.rurek.anims.generateFrameNames("rurek", {
                 start: 0,
                 end: 11,
-                prefix: "Hobo-stand-",
+                prefix: "Robo-stand-",
                 suffix: ".png",
               }),
               repeat: -1,
             });
-            this.hobo.play(AnimationKeys.HoboIdle);
-            // this.hobo.randomWalk();
+            this.rurek.play(AnimationKeys.RurekIdle);
           }
           break;
       }
@@ -125,8 +129,6 @@ export default class Game extends Phaser.Scene {
   }
 
   update(t: number, dt: number) {
-    // this.hobo.randomWalk();
-
     if (!this.playerController) return;
     this.playerController.update(dt);
 
@@ -137,8 +139,8 @@ export default class Game extends Phaser.Scene {
         setChapter(1);
       }
     });
-    this.matter.overlap(this.hobo, [this.hero], () => {
-      this.hobo.showText();
+    this.matter.overlap(this.rurek, [this.hero], () => {
+      this.rurek.showText();
       if (this.cursors.space.isDown) {
         this.scene.pause();
         this.scene.launch("dialogModal", { name: "temp" });
