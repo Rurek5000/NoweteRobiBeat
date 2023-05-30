@@ -51,7 +51,7 @@ export default class Game extends Phaser.Scene {
         case "spawn":
           {
             this.hero = new Hero(this, x + width * 0.5, y, TextureKeys.Hero);
-            this.hero.play(AnimationKeys.HeroIdle).setFixedRotation();
+            this.hero.setFixedRotation();
             this.hero.depth = 1;
 
             this.playerController = new PlayerController(
@@ -112,8 +112,8 @@ export default class Game extends Phaser.Scene {
               frameRate: 4,
               frames: this.rurek.anims.generateFrameNames("rurek", {
                 start: 0,
-                end: 11,
-                prefix: "Robo-stand-",
+                end: 3,
+                prefix: "Rurek-stand-",
                 suffix: ".png",
               }),
               repeat: -1,
@@ -136,14 +136,17 @@ export default class Game extends Phaser.Scene {
       this.forge.showText();
       if (this.cursors.space.isDown) {
         this.scene.start(SceneKeys.Forge);
-        setChapter(1);
+        // setChapter(1);
       }
     });
     this.matter.overlap(this.rurek, [this.hero], () => {
       this.rurek.showText();
       if (this.cursors.space.isDown) {
+        if (this.rurek.x > this.hero.x) this.rurek.flipX = true;
+        else this.rurek.flipX = false;
+
         this.scene.pause();
-        this.scene.launch("dialogModal", { name: "temp" });
+        this.scene.launch("dialogModal", { name: "rurek" });
       }
     });
 

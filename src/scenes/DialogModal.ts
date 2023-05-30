@@ -23,6 +23,9 @@ export default class DialogModal extends Phaser.Scene {
 
   preload() {
     this.load.image("kacper", "./assets/faces/kacper.png");
+    this.load.image("grzesiek", "./assets/faces/grzesiek.png");
+    this.load.image("bartosz", "./assets/faces/bartosz.png");
+    this.load.image("szymon-face", "./assets/faces/szymon-face.png");
     this.load.image("pawel", "./assets/faces/pawel.png");
   }
   create(data: { name: string }) {
@@ -30,9 +33,9 @@ export default class DialogModal extends Phaser.Scene {
     this.isWritten = true;
     this.bg = this.matter.add.rectangle(
       this.sys.game.canvas.width * 0.5,
-      this.sys.game.canvas.height - 100,
+      this.sys.game.canvas.height - 50,
       this.sys.game.canvas.width,
-      200,
+      100,
       {
         isStatic: true,
         isSensor: true,
@@ -42,8 +45,10 @@ export default class DialogModal extends Phaser.Scene {
     fetch(`./assets/dialog/${data.name}.json`)
       .then((response) => response.json())
       .then((data) => {
-        if (getChapter() == data.chapter) this.jsonData = data.dialog;
-        else this.jsonData = data.temp;
+        // if (getChapter() == data.chapter) this.jsonData = data.dialog;
+        // else this.jsonData = data.temp;
+
+        this.jsonData = data[getChapter()];
 
         this.showSpeech(this.jsonData, this.index, this.bg);
       })
@@ -76,6 +81,8 @@ export default class DialogModal extends Phaser.Scene {
     const paddingX = 60;
     const paddingY = 30;
 
+    console.log(value);
+
     this.image = this.matter.add.image(0, 0, value.image);
     this.text = this.add.text(leftTopX, leftTopY, value.content, {
       fontSize: "16px",
@@ -98,7 +105,7 @@ export default class DialogModal extends Phaser.Scene {
       : bgWidth - this.image.width * 0.25;
 
     this.image
-      .setPosition(x, this.sys.game.canvas.height - this.image.height)
+      .setPosition(x, this.sys.game.canvas.height - this.image.height + 90)
       .setStatic(true);
     this.image.setScale(0.5, 0.5);
   }

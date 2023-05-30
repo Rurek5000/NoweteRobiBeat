@@ -18,7 +18,7 @@ export default class Npc extends Phaser.Physics.Matter.Sprite {
     this.floatingText = new FloatingText(
       scene,
       this.rec,
-      "Talk (press spacebar)"
+      "Rozmawiaj (press spacebar)"
     );
   }
 

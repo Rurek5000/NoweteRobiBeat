@@ -1,6 +1,6 @@
 {"frames": {
 
-"Robo-stand-0.png":
+"Rurek-stand-0.png":
 {
 	"frame": {"x":0,"y":0,"w":48,"h":48},
 	"rotated": false,
@@ -8,7 +8,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
 	"sourceSize": {"w":48,"h":48}
 },
-"Robo-stand-1.png":
+"Rurek-stand-1.png":
 {
 	"frame": {"x":48,"y":0,"w":48,"h":48},
 	"rotated": false,
@@ -16,7 +16,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
 	"sourceSize": {"w":48,"h":48}
 },
-"Robo-stand-2.png":
+"Rurek-stand-2.png":
 {
 	"frame": {"x":96,"y":0,"w":48,"h":48},
 	"rotated": false,
@@ -24,7 +24,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
 	"sourceSize": {"w":48,"h":48}
 },
-"Robo-stand-3.png":
+"Rurek-stand-3.png":
 {
 	"frame": {"x":144,"y":0,"w":48,"h":48},
 	"rotated": false,
@@ -39,6 +39,6 @@
 	"format": "RGBA8888",
 	"size": {"w":192,"h":48},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:625403feb3a2edd4233f5c40f9a425e3:5fb537c2b0ebd1e8357506e490051492:8935fd8947efeff84beae018f62e4ff0$"
+	"smartupdate": "$TexturePacker:SmartUpdate:2102dec398d3182f9d7cc2b6dd5e1ca4:5fb537c2b0ebd1e8357506e490051492:8935fd8947efeff84beae018f62e4ff0$"
 }
 }

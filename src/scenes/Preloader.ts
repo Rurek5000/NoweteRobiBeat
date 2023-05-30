@@ -24,6 +24,11 @@ export default class Preloader extends Phaser.Scene {
       "assets/npc/rurek.png",
       "assets/npc/rurek.json"
     );
+    this.load.atlas(
+      TextureKeys.Szymon,
+      "assets/npc/szymon.png",
+      "assets/npc/szymon.json"
+    );
 
     this.load.image(TextureKeys.Tiles, "assets/texture/Tiles.png");
     this.load.image(TextureKeys.BaseColor, "assets/texture/Base-Color.png");

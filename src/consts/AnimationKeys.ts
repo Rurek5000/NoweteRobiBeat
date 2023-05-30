@@ -3,6 +3,7 @@ enum AnimationKeys {
   HeroWalk = "hero-walk",
   HoboIdle = "hobo-idle",
   RurekIdle = "rurek-idle",
+  SzymonIdle = "szymon-idle",
 }
 
 export default AnimationKeys;

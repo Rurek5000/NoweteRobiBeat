@@ -1,0 +1,49 @@
+{
+  "chapter": 1,
+  "0": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema! Robimy bit?"
+    },
+    "1": {
+      "isHero": false,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Siema! Bardzo chętnie ale muszę dokończyć zakupy a siada mi bateria w fonie. Masz ładownicę?"
+    },
+    "2": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Niestety nie posiadam takiego sprzętu elektronicznego :/"
+    },
+    "3": {
+      "isHero": false,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Kuźnia jest blisko, skoczysz do Szymka po to? On na pewno coś ze sobą bierze do roboty."
+    },
+    "4": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Pewnie, lecę!"
+    }
+  },
+  "1": {
+    "0": {
+      "isHero": true,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Cześć, dobrze Cię widzieć, fajnie, że się wyświetlasz :D"
+    },
+    "1": {
+      "isHero": false,
+      "image": "pawel",
+      "name": "Paweł",
+      "content": "Baja!"
+    }
+  }
+}

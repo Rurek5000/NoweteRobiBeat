@@ -1,0 +1,41 @@
+{
+  "frames": {
+    "Szymon-stand-0.png": {
+      "frame": { "x": 0, "y": 0, "w": 48, "h": 48 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 48, "h": 48 },
+      "sourceSize": { "w": 48, "h": 48 }
+    },
+    "Szymon-stand-1.png": {
+      "frame": { "x": 48, "y": 0, "w": 48, "h": 48 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 48, "h": 48 },
+      "sourceSize": { "w": 48, "h": 48 }
+    },
+    "Szymon-stand-2.png": {
+      "frame": { "x": 96, "y": 0, "w": 48, "h": 48 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 48, "h": 48 },
+      "sourceSize": { "w": 48, "h": 48 }
+    },
+    "Szymon-stand-3.png": {
+      "frame": { "x": 144, "y": 0, "w": 48, "h": 48 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 48, "h": 48 },
+      "sourceSize": { "w": 48, "h": 48 }
+    }
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.0",
+    "image": "szymon.png",
+    "format": "RGBA8888",
+    "size": { "w": 192, "h": 48 },
+    "scale": "1",
+    "smartupdate": "$TexturePacker:SmartUpdate:c35b2604c9d0080477015ab26e49783e:9c4b763d3a7288825fa7f43c70bff248:8935fd8947efeff84beae018f62e4ff0$"
+  }
+}

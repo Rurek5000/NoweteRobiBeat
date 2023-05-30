@@ -83,7 +83,7 @@
          "name":"bg_2",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":80,
          "x":0,
          "y":0
@@ -169,7 +169,7 @@
          "name":"decoration",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":80,
          "x":0,
          "y":0
@@ -211,15 +211,26 @@
                  "width":31,
                  "x":48.562,
                  "y":351.969
+                }, 
+                {
+                 "height":0,
+                 "id":7,
+                 "name":"szymon",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":869.681818181818,
+                 "y":402.681818181818
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":7,
+ "nextobjectid":8,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",
