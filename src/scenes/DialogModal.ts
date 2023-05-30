@@ -9,7 +9,7 @@ export default class DialogModal extends Phaser.Scene {
   private image!: any;
   private text!: any;
   private jsonData!: any;
-  private spaceKeyClicked!: boolean;
+  private isWritten!: boolean;
 
   constructor() {
     super({
@@ -27,6 +27,7 @@ export default class DialogModal extends Phaser.Scene {
   }
   create(data: { name: string }) {
     this.index = 0;
+    this.isWritten = true;
     this.bg = this.matter.add.rectangle(
       this.sys.game.canvas.width * 0.5,
       this.sys.game.canvas.height - 100,
@@ -41,27 +42,20 @@ export default class DialogModal extends Phaser.Scene {
     fetch(`./assets/dialog/${data.name}.json`)
       .then((response) => response.json())
       .then((data) => {
-        if (getChapter() == data.chapter) {
-          this.showSpeech(data.dialog, this.index, this.bg);
-          this.jsonData = data.dialog;
-        } else {
-          this.showSpeech(data.temp, this.index, this.bg);
-          this.jsonData = data.temp;
-        }
+        if (getChapter() == data.chapter) this.jsonData = data.dialog;
+        else this.jsonData = data.temp;
+
+        this.showSpeech(this.jsonData, this.index, this.bg);
       })
       .catch((error) => {
         console.error("Błąd wczytywania pliku JSON:", error);
       });
   }
   update(t: number, dt: number) {
-    if (this.cursors.space.isDown && !this.spaceKeyClicked) {
+    if (this.cursors.space.isDown && this.isWritten) {
+      this.index++;
       if (this.index < Object.keys(this.jsonData).length) {
-        this.spaceKeyClicked = true;
         this.showSpeech(this.jsonData, this.index, this.bg);
-        this.index++;
-        window.setTimeout(() => {
-          this.spaceKeyClicked = false;
-        }, 50);
       } else {
         this.scene.stop();
         events.emit("close");
@@ -97,6 +91,7 @@ export default class DialogModal extends Phaser.Scene {
         bottom: paddingY,
       },
     });
+    this.writeText(this.text);
 
     const x = value.isHero
       ? leftTopX + this.image.width * 0.25
@@ -106,5 +101,23 @@ export default class DialogModal extends Phaser.Scene {
       .setPosition(x, this.sys.game.canvas.height - this.image.height)
       .setStatic(true);
     this.image.setScale(0.5, 0.5);
+  }
+
+  private writeText(text: Phaser.GameObjects.Text) {
+    const fullText = text.text;
+    const length = text.text.length;
+    let i = 0;
+    this.isWritten = false;
+
+    text.text = "";
+    this.time.addEvent({
+      callback: () => {
+        text.text += fullText[i];
+        ++i;
+        if (length == i) this.isWritten = true;
+      },
+      repeat: length - 1,
+      delay: 35,
+    });
   }
 }
