@@ -1,20 +1,31 @@
 {
-  "0": {
-    "isHero": true,
-    "image": "kacper",
-    "name": "Kacper",
-    "content": "Cześć, dobrze Cię widzieć, fajnie, że się wyświetlasz :D"
+  "chapter": 1,
+  "dialog": {
+    "0": {
+      "isHero": true,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Cześć, dobrze Cię widzieć, fajnie, że się wyświetlasz :D"
+    },
+    "1": {
+      "isHero": false,
+      "image": "pawel",
+      "name": "Paweł",
+      "content": "Baja!"
+    },
+    "2": {
+      "isHero": false,
+      "image": "pawel",
+      "name": "Paweł",
+      "content": "Baja!"
+    }
   },
-  "1": {
-    "isHero": false,
-    "image": "pawel",
-    "name": "Paweł",
-    "content": "Baja!"
-  },
-  "2": {
-    "isHero": false,
-    "image": "pawel",
-    "name": "Paweł",
-    "content": "Baja!"
+  "temp": {
+    "0": {
+      "isHero": true,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Póki co nic dla Ciebie nie mam :/"
+    }
   }
 }

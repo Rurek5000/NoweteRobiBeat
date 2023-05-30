@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import SceneKeys from "../consts/SceneKeys";
 
 export default class DialogModal extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -21,7 +22,7 @@ export default class DialogModal extends Phaser.Scene {
   }
   update(t: number, dt: number) {
     if (this.cursors.space.isDown) {
-      this.scene.start("street");
+      this.scene.start(SceneKeys.Street);
       this.theme.stop();
     }
   }

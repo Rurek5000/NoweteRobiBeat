@@ -7,6 +7,7 @@ import FloatingText from "../game/FloatingText";
 import SceneKeys from "../consts/SceneKeys";
 import Npc from "../game/Npc";
 import { sharedInstance as events } from "./EventCenter";
+import { setChapter } from "../globals";
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -131,7 +132,10 @@ export default class Game extends Phaser.Scene {
 
     this.matter.overlap(this.forge.obj, [this.hero], () => {
       this.forge.showText();
-      if (this.cursors.space.isDown) this.scene.start(SceneKeys.Forge);
+      if (this.cursors.space.isDown) {
+        this.scene.start(SceneKeys.Forge);
+        setChapter(1);
+      }
     });
     this.matter.overlap(this.hobo, [this.hero], () => {
       this.hobo.showText();

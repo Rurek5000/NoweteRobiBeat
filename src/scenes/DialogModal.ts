@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { getChapter } from "../globals";
 import { sharedInstance as events } from "./EventCenter";
 
 export default class DialogModal extends Phaser.Scene {
@@ -40,8 +41,13 @@ export default class DialogModal extends Phaser.Scene {
     fetch(`./assets/dialog/${data.name}.json`)
       .then((response) => response.json())
       .then((data) => {
-        this.jsonData = data;
-        this.showSpeech(data, this.index, this.bg);
+        if (getChapter() == data.chapter) {
+          this.showSpeech(data.dialog, this.index, this.bg);
+          this.jsonData = data.dialog;
+        } else {
+          this.showSpeech(data.temp, this.index, this.bg);
+          this.jsonData = data.temp;
+        }
       })
       .catch((error) => {
         console.error("Błąd wczytywania pliku JSON:", error);
