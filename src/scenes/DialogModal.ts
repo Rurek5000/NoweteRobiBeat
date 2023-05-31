@@ -10,6 +10,7 @@ export default class DialogModal extends Phaser.Scene {
   private text!: any;
   private jsonData!: any;
   private isWritten!: boolean;
+  private name!: string;
 
   constructor() {
     super({
@@ -29,6 +30,7 @@ export default class DialogModal extends Phaser.Scene {
     this.load.image("pawel", "./assets/faces/pawel.png");
   }
   create(data: { name: string }) {
+    this.name = data.name;
     this.index = 0;
     this.isWritten = true;
     this.bg = this.matter.add.rectangle(
@@ -59,11 +61,13 @@ export default class DialogModal extends Phaser.Scene {
   update(t: number, dt: number) {
     if (this.cursors.space.isDown && this.isWritten) {
       this.index++;
+      console.log(this.index);
+      console.log(Object.keys(this.jsonData).length);
       if (this.index < Object.keys(this.jsonData).length) {
         this.showSpeech(this.jsonData, this.index, this.bg);
       } else {
+        events.emit(`close-${this.name}`);
         this.scene.stop();
-        events.emit("close");
       }
     }
   }

@@ -5,6 +5,7 @@ import TextureKeys from "../consts/TextureKeys";
 import PlayerController from "../game/PlayerController";
 import FloatingText from "../game/FloatingText";
 import SceneKeys from "../consts/SceneKeys";
+import { sharedInstance as events } from "./EventCenter";
 import Npc from "../game/Npc";
 
 export default class Forge extends Phaser.Scene {
@@ -135,6 +136,10 @@ export default class Forge extends Phaser.Scene {
         this.scene.pause();
         this.scene.launch("dialogModal", { name: "szymon" });
       }
+    });
+
+    events.on(`close-szymon`, () => {
+      this.scene.resume();
     });
   }
 }

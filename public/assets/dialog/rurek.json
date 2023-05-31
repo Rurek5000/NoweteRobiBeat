@@ -34,16 +34,10 @@
   },
   "1": {
     "0": {
-      "isHero": true,
+      "isHero": false,
       "image": "kacper",
       "name": "Kacper",
-      "content": "Cześć, dobrze Cię widzieć, fajnie, że się wyświetlasz :D"
-    },
-    "1": {
-      "isHero": false,
-      "image": "pawel",
-      "name": "Paweł",
-      "content": "Baja!"
+      "content": "Potrzebuję tej ładowarki, byłeś już u Szymka?"
     }
   }
 }

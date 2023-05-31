@@ -7,7 +7,7 @@ import FloatingText from "../game/FloatingText";
 import SceneKeys from "../consts/SceneKeys";
 import Npc from "../game/Npc";
 import { sharedInstance as events } from "./EventCenter";
-import { setChapter } from "../globals";
+import { getChapter, setChapter } from "../globals";
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -136,7 +136,6 @@ export default class Game extends Phaser.Scene {
       this.forge.showText();
       if (this.cursors.space.isDown) {
         this.scene.start(SceneKeys.Forge);
-        // setChapter(1);
       }
     });
     this.matter.overlap(this.rurek, [this.hero], () => {
@@ -150,8 +149,9 @@ export default class Game extends Phaser.Scene {
       }
     });
 
-    events.on("close", () => {
+    events.on("close-rurek", () => {
       this.scene.resume();
+      if (getChapter() == 0) setChapter(1);
     });
   }
 }

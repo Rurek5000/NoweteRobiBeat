@@ -5,45 +5,45 @@
       "isHero": true,
       "image": "grzesiek",
       "name": "Grzesiek",
-      "content": "Siema! Robimy bit?"
+      "content": "Siema suwnicowy..."
     },
     "1": {
       "isHero": false,
       "image": "szymon-face",
       "name": "Szymon",
-      "content": "Siema! Bardzo chętnie ale muszę dokończyć zakupy a siada mi bateria w fonie. Masz ładownicę?"
-    },
-    "2": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
-      "content": "Niestety nie posiadam takiego sprzętu elektronicznego :/"
-    },
-    "3": {
-      "isHero": false,
-      "image": "szymon-face",
-      "name": "Szymon",
-      "content": "Kuźnia jest blisko, skoczysz do Szymka po to? On na pewno coś ze sobą bierze do roboty."
-    },
-    "4": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
-      "content": "Pewnie, lecę!"
+      "content": "Siema, mam robotę."
     }
   },
   "1": {
     "0": {
       "isHero": true,
-      "image": "szymon",
-      "name": "Szymon",
-      "content": "Cześć, dobrze Cię widzieć, fajnie, że się wyświetlasz :D"
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema suwnicowy, co tu majstrujesz?"
     },
     "1": {
       "isHero": false,
-      "image": "pawel",
-      "name": "Paweł",
-      "content": "Baja!"
+      "image": "szymon-face",
+      "name": "Szymon",
+      "content": "Siema, mam robotę. Zastępuję kierownika hyhy. Opierdalam się cały dzień."
+    },
+    "2": {
+      "isHero": false,
+      "image": "szymon-face",
+      "name": "Szymon",
+      "content": "Kuźnia stoi bo nie ma prądu i działamy na awaryjnym."
+    },
+    "3": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Kurde, nie dobrze. Masz może pożyczyć ładowarkę do telefonu?\nRurek potrzebuje skończyć zakupy a padł mu telefon."
+    },
+    "4": {
+      "isHero": false,
+      "image": "szymon-face",
+      "name": "Szymon",
+      "content": "Wiesz co... może być problem. Sam się ładuję z powerbanka.\nIdź na magazyn zobaczyć czy można już włączyć prąd. Jak wróci prąd dam Ci powerbanka."
     }
   }
 }
