@@ -13,7 +13,7 @@ export default class Magazine extends Phaser.Scene {
   private hero!: Hero;
   private playerController?: PlayerController;
   private home!: FloatingText;
-  private szymon!: Npc;
+  private pawel!: Npc;
 
   constructor() {
     super("magazine");
@@ -86,18 +86,18 @@ export default class Magazine extends Phaser.Scene {
           break;
         case "pawel":
           {
-            this.szymon = new Npc(
+            this.pawel = new Npc(
               this,
               x + width * 0.5,
-              y - 8,
+              y - 12,
               TextureKeys.Szymon
             );
-            this.szymon.setStatic(true);
-            this.szymon.setSensor(true);
-            this.szymon.anims.create({
+            this.pawel.setStatic(true);
+            this.pawel.setSensor(true);
+            this.pawel.anims.create({
               key: AnimationKeys.SzymonIdle,
               frameRate: 4,
-              frames: this.szymon.anims.generateFrameNames("szymon", {
+              frames: this.pawel.anims.generateFrameNames("szymon", {
                 start: 0,
                 end: 3,
                 prefix: "Szymon-stand-",
@@ -105,7 +105,7 @@ export default class Magazine extends Phaser.Scene {
               }),
               repeat: -1,
             });
-            this.szymon.play(AnimationKeys.SzymonIdle);
+            this.pawel.play(AnimationKeys.SzymonIdle);
           }
           break;
       }
@@ -120,16 +120,16 @@ export default class Magazine extends Phaser.Scene {
 
     this.matter.overlap(this.home.obj, [this.hero], () => {
       this.home.showText();
-      if (this.cursors.space.isDown) this.scene.start(SceneKeys.Street);
+      if (this.cursors.space.isDown) this.scene.start(SceneKeys.Forge);
     });
-    this.matter.overlap(this.szymon, [this.hero], () => {
-      this.szymon.showText();
+    this.matter.overlap(this.pawel, [this.hero], () => {
+      this.pawel.showText();
       if (this.cursors.space.isDown) {
-        if (this.szymon.x > this.hero.x) this.szymon.flipX = true;
-        else this.szymon.flipX = false;
+        if (this.pawel.x > this.hero.x) this.pawel.flipX = true;
+        else this.pawel.flipX = false;
 
         this.scene.pause();
-        this.scene.launch("dialogModal", { name: "szymon" });
+        this.scene.launch("dialogModal", { name: "pawel" });
       }
     });
 

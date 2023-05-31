@@ -13,6 +13,7 @@ export default class Forge extends Phaser.Scene {
   private hero!: Hero;
   private playerController?: PlayerController;
   private home!: FloatingText;
+  private magazine!: FloatingText;
   private szymon!: Npc;
 
   constructor() {
@@ -89,6 +90,25 @@ export default class Forge extends Phaser.Scene {
             this.home = new FloatingText(this, rec, "Home (press spacebar)");
           }
           break;
+        case "magazine":
+          {
+            const rec = this.matter.add.rectangle(
+              x + width * 0.5,
+              y + height * 0.5,
+              width,
+              height,
+              {
+                isStatic: true,
+                isSensor: true,
+              }
+            );
+            this.magazine = new FloatingText(
+              this,
+              rec,
+              "Home (press spacebar)"
+            );
+          }
+          break;
         case "szymon":
           {
             this.szymon = new Npc(
@@ -126,6 +146,10 @@ export default class Forge extends Phaser.Scene {
     this.matter.overlap(this.home.obj, [this.hero], () => {
       this.home.showText();
       if (this.cursors.space.isDown) this.scene.start(SceneKeys.Street);
+    });
+    this.matter.overlap(this.magazine.obj, [this.hero], () => {
+      this.magazine.showText();
+      if (this.cursors.space.isDown) this.scene.start(SceneKeys.Magazine);
     });
     this.matter.overlap(this.szymon, [this.hero], () => {
       this.szymon.showText();
