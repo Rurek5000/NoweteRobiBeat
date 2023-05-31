@@ -3,6 +3,7 @@ enum SceneKeys {
   MainMenu = "mainMenu",
   Street = "street",
   Forge = "forge",
+  Magazine = "magazine",
   GameOver = "gameOver",
 }
 

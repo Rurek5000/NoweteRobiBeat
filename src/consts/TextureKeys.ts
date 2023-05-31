@@ -12,6 +12,7 @@ enum TextureKeys {
   Tilemap = "tilemap",
   Forge = "forge",
   ForgeProps = "forge-props",
+  Magazine = "magazine",
 }
 
 export default TextureKeys;

@@ -47,9 +47,11 @@ export default class Preloader extends Phaser.Scene {
 
     this.load.tilemapTiledJSON(TextureKeys.Tilemap, "assets/main.json");
     this.load.tilemapTiledJSON(TextureKeys.Forge, "assets/kuznia.json");
+    this.load.tilemapTiledJSON(TextureKeys.Magazine, "assets/magazine.json");
   }
   create() {
     // this.scene.start(SceneKeys.MainMenu);
-    this.scene.start(SceneKeys.Street);
+    // this.scene.start(SceneKeys.Street);
+    this.scene.start(SceneKeys.Magazine);
   }
 }
