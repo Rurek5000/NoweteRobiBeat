@@ -30,6 +30,7 @@ export default class Preloader extends Phaser.Scene {
       "assets/npc/szymon.json"
     );
 
+    this.load.image("main-menu-bg", "assets/main-menu-bg.jpg");
     this.load.image(TextureKeys.Tiles, "assets/texture/Tiles.png");
     this.load.image(TextureKeys.BaseColor, "assets/texture/Base-Color.png");
     this.load.image(
@@ -50,8 +51,8 @@ export default class Preloader extends Phaser.Scene {
     this.load.tilemapTiledJSON(TextureKeys.Magazine, "assets/magazine.json");
   }
   create() {
-    // this.scene.start(SceneKeys.MainMenu);
+    this.scene.start(SceneKeys.MainMenu);
     // this.scene.start(SceneKeys.Street);
-    this.scene.start(SceneKeys.Magazine);
+    // this.scene.start(SceneKeys.Magazine);
   }
 }

@@ -66,6 +66,7 @@ export default class DialogModal extends Phaser.Scene {
       if (this.index < Object.keys(this.jsonData).length) {
         this.showSpeech(this.jsonData, this.index, this.bg);
       } else {
+        console.log(this.name);
         events.emit(`close-${this.name}`);
         this.scene.stop();
       }

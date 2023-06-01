@@ -126,6 +126,8 @@ export default class Game extends Phaser.Scene {
 
     this.cameras.main.zoom = 1.3;
     this.matter.world.convertTilemapLayer(ground);
+
+    this.scene.launch("dialogModal", { name: "grzesiek" });
   }
 
   update(t: number, dt: number) {
@@ -153,5 +155,8 @@ export default class Game extends Phaser.Scene {
       this.scene.resume();
       if (getChapter() == 0) setChapter(1);
     });
+    // events.on("close-grzesiek", () => {
+    //   this.scene.resume();
+    // });
   }
 }
