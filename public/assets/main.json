@@ -816,12 +816,12 @@
                  "x":64,
                  "y":16
                 }],
-         "height":48,
+         "height":32,
          "id":6,
          "name":"decoration",
          "opacity":1,
          "startx":16,
-         "starty":-16,
+         "starty":0,
          "type":"tilelayer",
          "visible":true,
          "width":64,
@@ -1004,13 +1004,35 @@
                 {
                  "height":31.125,
                  "id":14,
-                 "name":"house",
+                 "name":"home",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":21,
-                 "x":278.166666666666,
-                 "y":398.4375
+                 "x":278.167,
+                 "y":398.438
+                }, 
+                {
+                 "height":16.5,
+                 "id":15,
+                 "name":"spawn-forge",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":1249.95833333333,
+                 "y":414
+                }, 
+                {
+                 "height":16.5,
+                 "id":16,
+                 "name":"spawn-home",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":319.5,
+                 "y":413.75
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1019,7 +1041,7 @@
          "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":15,
+ "nextobjectid":17,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",

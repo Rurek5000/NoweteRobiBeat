@@ -7,6 +7,7 @@ import FloatingText from "../game/FloatingText";
 import SceneKeys from "../consts/SceneKeys";
 import { sharedInstance as events } from "./EventCenter";
 import Npc from "../game/Npc";
+import { getChapter, setChapter } from "../globals";
 
 export default class Forge extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -15,6 +16,7 @@ export default class Forge extends Phaser.Scene {
   private home!: FloatingText;
   private magazine!: FloatingText;
   private szymon!: Npc;
+  private before!: string;
 
   constructor() {
     super("forge");
@@ -24,14 +26,17 @@ export default class Forge extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
   }
 
-  create() {
+  create(data: { before: string }) {
     const map = this.make.tilemap({ key: "forge" });
     const tileset = map.addTilesetImage("Tiles", "tiles");
     const buildings = map.addTilesetImage("Buildings", "buildings");
     const baseColor = map.addTilesetImage("Base Color", "base-color-forge");
     const forge = map.addTilesetImage("forge", "forge");
     const forgeProps = map.addTilesetImage("Forge Props", "forge-props");
+
     const decoration = map.addTilesetImage("Props-01", "props-01");
+
+    this.before = data.before ? `-${data.before}` : "";
 
     map.createLayer("bg", [buildings, baseColor]);
     map.createLayer("bg_2", forge);
@@ -45,7 +50,7 @@ export default class Forge extends Phaser.Scene {
     objectsLayer.objects.forEach((objData) => {
       const { x = 0, y = 0, name, width = 0, height = 0 } = objData;
       switch (name) {
-        case "spawn":
+        case `spawn${this.before}`:
           {
             this.hero = new Hero(this, x + width * 0.5, y, TextureKeys.Hero);
             this.hero.play(AnimationKeys.HeroWalk).setFixedRotation();
@@ -145,7 +150,8 @@ export default class Forge extends Phaser.Scene {
 
     this.matter.overlap(this.home.obj, [this.hero], () => {
       this.home.showText();
-      if (this.cursors.space.isDown) this.scene.start(SceneKeys.Street);
+      if (this.cursors.space.isDown)
+        this.scene.start(SceneKeys.Street, { before: "forge" });
     });
     this.matter.overlap(this.magazine.obj, [this.hero], () => {
       this.magazine.showText();
@@ -164,6 +170,8 @@ export default class Forge extends Phaser.Scene {
 
     events.on(`close-szymon`, () => {
       this.scene.resume();
+      if (getChapter() == 1) setChapter(2);
+      if (getChapter() == 3) setChapter(4);
     });
   }
 }

@@ -9,7 +9,7 @@
     },
     "1": {
       "isHero": false,
-      "image": "pawel",
+      "image": "pawel-face",
       "name": "Paweł",
       "content": "Siema, nie mam teraz czasu, próbuję przywrócić prąd."
     }
@@ -23,7 +23,7 @@
     },
     "1": {
       "isHero": false,
-      "image": "pawel",
+      "image": "pawel-face",
       "name": "Paweł",
       "content": "Siema, nie mam teraz czasu, próbuję przywrócić prąd."
     }
@@ -33,25 +33,11 @@
       "isHero": true,
       "image": "grzesiek",
       "name": "Grzesiek",
-      "content": "Siema suwnicowy..."
-    },
-    "1": {
-      "isHero": false,
-      "image": "szymon-face",
-      "name": "Szymon",
-      "content": "Siema, mam robotę."
-    }
-  },
-  "3": {
-    "0": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
       "content": "Siema, kiedy naprawisz prąd?"
     },
     "1": {
       "isHero": false,
-      "image": "pawel",
+      "image": "pawel-face",
       "name": "Paweł",
       "content": "Siema, w sumie to mogę teraz. Mam płacone od godziny nie od roboty."
     },
@@ -63,7 +49,7 @@
     },
     "3": {
       "isHero": false,
-      "image": "pawel",
+      "image": "pawel-face",
       "name": "Paweł",
       "content": "Na gryl! Baja!"
     },
@@ -71,6 +57,32 @@
       "isHero": true,
       "image": "grzesiek",
       "name": "Grzesiek",
+      "content": "Baja!"
+    }
+  },
+  "3": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema, co robisz?"
+    },
+    "1": {
+      "isHero": false,
+      "image": "pawel-face",
+      "name": "Paweł",
+      "content": "Siema, sprzątam magazyn i lecę do domu."
+    },
+    "2": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Ale baja!"
+    },
+    "3": {
+      "isHero": false,
+      "image": "pawel-face",
+      "name": "Paweł",
       "content": "Baja!"
     }
   },
@@ -83,7 +95,7 @@
     },
     "1": {
       "isHero": false,
-      "image": "pawel",
+      "image": "pawel-face",
       "name": "Paweł",
       "content": "Siema, sprzątam magazyn i lecę do domu."
     },
@@ -95,7 +107,7 @@
     },
     "3": {
       "isHero": false,
-      "image": "pawel",
+      "image": "pawel-face",
       "name": "Paweł",
       "content": "Baja!"
     }
@@ -109,7 +121,7 @@
     },
     "1": {
       "isHero": false,
-      "image": "pawel",
+      "image": "pawel-face",
       "name": "Paweł",
       "content": "Siema, sprzątam magazyn i lecę do domu."
     },
@@ -121,33 +133,7 @@
     },
     "3": {
       "isHero": false,
-      "image": "pawel",
-      "name": "Paweł",
-      "content": "Baja!"
-    }
-  },
-  "6": {
-    "0": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
-      "content": "Siema, co robisz?"
-    },
-    "1": {
-      "isHero": false,
-      "image": "pawel",
-      "name": "Paweł",
-      "content": "Siema, sprzątam magazyn i lecę do domu."
-    },
-    "2": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
-      "content": "Ale baja!"
-    },
-    "3": {
-      "isHero": false,
-      "image": "pawel",
+      "image": "pawel-face",
       "name": "Paweł",
       "content": "Baja!"
     }

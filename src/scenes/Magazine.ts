@@ -7,6 +7,7 @@ import FloatingText from "../game/FloatingText";
 import SceneKeys from "../consts/SceneKeys";
 import { sharedInstance as events } from "./EventCenter";
 import Npc from "../game/Npc";
+import { getChapter, setChapter } from "../globals";
 
 export default class Magazine extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -39,7 +40,7 @@ export default class Magazine extends Phaser.Scene {
     objectsLayer.objects.forEach((objData) => {
       const { x = 0, y = 0, name, width = 0, height = 0 } = objData;
       switch (name) {
-        case "spawn":
+        case `spawn`:
           {
             this.hero = new Hero(this, x + width * 0.5, y, TextureKeys.Hero);
             this.hero.play(AnimationKeys.HeroWalk).setFixedRotation();
@@ -90,22 +91,22 @@ export default class Magazine extends Phaser.Scene {
               this,
               x + width * 0.5,
               y - 12,
-              TextureKeys.Szymon
+              TextureKeys.Pawel
             );
             this.pawel.setStatic(true);
             this.pawel.setSensor(true);
             this.pawel.anims.create({
-              key: AnimationKeys.SzymonIdle,
+              key: AnimationKeys.PawelIdle,
               frameRate: 4,
-              frames: this.pawel.anims.generateFrameNames("szymon", {
+              frames: this.pawel.anims.generateFrameNames("pawel", {
                 start: 0,
                 end: 3,
-                prefix: "Szymon-stand-",
+                prefix: "Pawel-stand-",
                 suffix: ".png",
               }),
               repeat: -1,
             });
-            this.pawel.play(AnimationKeys.SzymonIdle);
+            this.pawel.play(AnimationKeys.PawelIdle);
           }
           break;
       }
@@ -120,7 +121,8 @@ export default class Magazine extends Phaser.Scene {
 
     this.matter.overlap(this.home.obj, [this.hero], () => {
       this.home.showText();
-      if (this.cursors.space.isDown) this.scene.start(SceneKeys.Forge);
+      if (this.cursors.space.isDown)
+        this.scene.start(SceneKeys.Forge, { before: "magazine" });
     });
     this.matter.overlap(this.pawel, [this.hero], () => {
       this.pawel.showText();
@@ -133,8 +135,9 @@ export default class Magazine extends Phaser.Scene {
       }
     });
 
-    events.on(`close-szymon`, () => {
+    events.on(`close-pawel`, () => {
       this.scene.resume();
+      if (getChapter() == 2) setChapter(3);
     });
   }
 }

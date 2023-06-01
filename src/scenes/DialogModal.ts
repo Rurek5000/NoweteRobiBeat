@@ -25,9 +25,9 @@ export default class DialogModal extends Phaser.Scene {
   preload() {
     this.load.image("kacper", "./assets/faces/kacper.png");
     this.load.image("grzesiek", "./assets/faces/grzesiek.png");
-    this.load.image("bartosz", "./assets/faces/bartosz.png");
+    this.load.image("bartosz-face", "./assets/faces/bartosz-face.png");
     this.load.image("szymon-face", "./assets/faces/szymon-face.png");
-    this.load.image("pawel", "./assets/faces/pawel.png");
+    this.load.image("pawel-face", "./assets/faces/pawel-face.png");
   }
   create(data: { name: string }) {
     this.name = data.name;
@@ -47,9 +47,8 @@ export default class DialogModal extends Phaser.Scene {
     fetch(`./assets/dialog/${data.name}.json`)
       .then((response) => response.json())
       .then((data) => {
-        // if (getChapter() == data.chapter) this.jsonData = data.dialog;
-        // else this.jsonData = data.temp;
-
+        console.log("chapter", getChapter());
+        console.log(data[getChapter()]);
         this.jsonData = data[getChapter()];
 
         this.showSpeech(this.jsonData, this.index, this.bg);
@@ -61,8 +60,6 @@ export default class DialogModal extends Phaser.Scene {
   update(t: number, dt: number) {
     if (this.cursors.space.isDown && this.isWritten) {
       this.index++;
-      console.log(this.index);
-      console.log(Object.keys(this.jsonData).length);
       if (this.index < Object.keys(this.jsonData).length) {
         this.showSpeech(this.jsonData, this.index, this.bg);
       } else {
@@ -129,7 +126,8 @@ export default class DialogModal extends Phaser.Scene {
         if (length == i) this.isWritten = true;
       },
       repeat: length - 1,
-      delay: 35,
+      delay: 1,
+      // delay: 35,
     });
   }
 }

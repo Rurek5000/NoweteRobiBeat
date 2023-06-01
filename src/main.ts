@@ -6,6 +6,7 @@ import DialogModal from "./scenes/DialogModal";
 import Preloader from "./scenes/Preloader";
 import MainMenu from "./scenes/MainMenu";
 import Magazine from "./scenes/Magazine";
+import Home from "./scenes/Home";
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
@@ -18,7 +19,7 @@ const config: Phaser.Types.Core.GameConfig = {
       debug: true,
     },
   },
-  scene: [Preloader, MainMenu, Street, Forge, Magazine, DialogModal],
+  scene: [Preloader, MainMenu, Street, Forge, Magazine, Home, DialogModal],
 };
 
 export default new Phaser.Game(config);

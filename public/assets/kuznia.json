@@ -224,15 +224,26 @@
                  "y":402.682
                 }, 
                 {
-                 "height":45.3750000000001,
+                 "height":45.375,
                  "id":8,
                  "name":"magazine",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":45.9999999999999,
-                 "x":993.166666666667,
-                 "y":367.8125
+                 "width":46,
+                 "x":993.167,
+                 "y":367.812
+                }, 
+                {
+                 "height":16.5,
+                 "id":9,
+                 "name":"spawn-magazine",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":969,
+                 "y":393.75
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -241,7 +252,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":9,
+ "nextobjectid":10,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",

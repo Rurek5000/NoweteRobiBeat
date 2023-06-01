@@ -4,6 +4,7 @@ enum SceneKeys {
   Street = "street",
   Forge = "forge",
   Magazine = "magazine",
+  Home = "home",
   GameOver = "gameOver",
 }
 
