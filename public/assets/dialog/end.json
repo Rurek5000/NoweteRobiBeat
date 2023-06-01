@@ -5,33 +5,97 @@
       "isHero": true,
       "image": "grzesiek",
       "name": "Grzesiek",
-      "content": "Ale piękny dzień, aż bym se zrobił jakiś bengier."
+      "content": "Siema..."
     },
     "1": {
       "isHero": false,
       "image": "bartosz",
       "name": "Bartosz",
-      "content": "Siema, nie przyjdź później bo gram w Cska."
+      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
+    }
+  },
+  "1": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema..."
     },
-    "2": {
+    "1": {
       "isHero": false,
-      "image": "szymon-face",
-      "name": "Szymon",
-      "content": "Może wieczorem wpadne, trochę się spóźnię."
+      "image": "bartosz",
+      "name": "Bartosz",
+      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
+    }
+  },
+  "2": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema..."
     },
-    "2": {
-      "0": {
-        "isHero": false,
-        "image": "kacper",
-        "name": "Kacper",
-        "content": "Byłeś u Bartka? Potrzebuję tej przejściówki."
-      }
-    },
-    "3": {
+    "1": {
       "isHero": false,
-      "image": "pawel",
-      "name": "Paweł",
-      "content": "Na gryl! Baja!"
+      "image": "bartosz",
+      "name": "Bartosz",
+      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
+    }
+  },
+  "3": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema..."
+    },
+    "1": {
+      "isHero": false,
+      "image": "bartosz",
+      "name": "Bartosz",
+      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
+    }
+  },
+  "4": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema..."
+    },
+    "1": {
+      "isHero": false,
+      "image": "bartosz",
+      "name": "Bartosz",
+      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
+    }
+  },
+  "5": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema..."
+    },
+    "1": {
+      "isHero": false,
+      "image": "bartosz",
+      "name": "Bartosz",
+      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
+    }
+  },
+  "6": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema..."
+    },
+    "1": {
+      "isHero": false,
+      "image": "bartosz",
+      "name": "Bartosz",
+      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
     }
   }
 }
