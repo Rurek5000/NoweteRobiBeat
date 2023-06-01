@@ -1,0 +1,17 @@
+{
+  "chapter": 1,
+  "0": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Ale piękny dzień, aż bym se zrobił jakiś bengier."
+    },
+    "1": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "O! Rurek, może skończymy, któryś z bitów."
+    }
+  }
+}

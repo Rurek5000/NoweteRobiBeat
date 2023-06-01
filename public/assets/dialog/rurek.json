@@ -39,5 +39,81 @@
       "name": "Kacper",
       "content": "Potrzebuję tej ładowarki, byłeś już u Szymka?"
     }
+  },
+  "2": {
+    "0": {
+      "isHero": false,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Potrzebuję tej ładowarki, byłeś już u Szymka?"
+    }
+  },
+  "3": {
+    "0": {
+      "isHero": false,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Potrzebuję tej ładowarki, byłeś już u Szymka?"
+    }
+  },
+  "4": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Mam powerbank, kończ te zakupy i idziemy."
+    },
+    "1": {
+      "isHero": false,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Kurwa... ale to jest USB-C 2.0 quick big klamot charge. \n Ja w swojej Noki mam jeszcze stare wejście..."
+    },
+    "2": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Ja pierdole... I co teraz?"
+    },
+    "3": {
+      "isHero": false,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Skoczysz do Szczupłego po przejściówkę? Na pewno coś ma."
+    },
+    "4": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Ty nie możesz iść?"
+    },
+    "5": {
+      "isHero": false,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Pilnuję koszyka"
+    },
+    "6": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "..."
+    }
+  },
+  "5": {
+    "0": {
+      "isHero": false,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Byłeś u Bartka? Potrzebuję tej przejściówki."
+    }
+  },
+  "6": {
+    "0": {
+      "isHero": false,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Byłeś u Bartka? Potrzebuję tej przejściówki."
+    }
   }
 }

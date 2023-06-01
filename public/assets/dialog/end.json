@@ -1,0 +1,37 @@
+{
+  "chapter": 1,
+  "0": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Ale piękny dzień, aż bym se zrobił jakiś bengier."
+    },
+    "1": {
+      "isHero": false,
+      "image": "bartosz",
+      "name": "Bartosz",
+      "content": "Siema, nie przyjdź później bo gram w Cska."
+    },
+    "2": {
+      "isHero": false,
+      "image": "szymon-face",
+      "name": "Szymon",
+      "content": "Może wieczorem wpadne, trochę się spóźnię."
+    },
+    "2": {
+      "0": {
+        "isHero": false,
+        "image": "kacper",
+        "name": "Kacper",
+        "content": "Byłeś u Bartka? Potrzebuję tej przejściówki."
+      }
+    },
+    "3": {
+      "isHero": false,
+      "image": "pawel",
+      "name": "Paweł",
+      "content": "Na gryl! Baja!"
+    }
+  }
+}

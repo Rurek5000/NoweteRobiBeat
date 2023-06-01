@@ -45,5 +45,73 @@
       "name": "Szymon",
       "content": "Wiesz co... może być problem. Sam się ładuję z powerbanka.\nIdź na magazyn zobaczyć czy można już włączyć prąd. Jak wróci prąd dam Ci powerbanka."
     }
+  },
+  "2": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema suwnicowy..."
+    },
+    "1": {
+      "isHero": false,
+      "image": "szymon-face",
+      "name": "Szymon",
+      "content": "Siema, mam robotę."
+    }
+  },
+  "3": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema, prąd już działa. Dasz mi ten powerbank?"
+    },
+    "1": {
+      "isHero": false,
+      "image": "szymon-face",
+      "name": "Szymon",
+      "content": "Tylko nie zepsuj! Powiedz Rurkowi, żeby se kupił swój a nie na rower wydawał."
+    },
+    "2": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Es. Wpadasz na gryl?"
+    },
+    "3": {
+      "isHero": false,
+      "image": "szymon-face",
+      "name": "Szymon",
+      "content": "Może wieczorem wpadne, trochę się spóźnię."
+    }
+  },
+  "4": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema suwnicowy..."
+    },
+    "1": {
+      "isHero": false,
+      "image": "szymon-face",
+      "name": "Szymon",
+      "content": "Siema, mam robotę."
+    }
+  },
+  "5": {
+    "0": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Siema suwnicowy..."
+    },
+    "1": {
+      "isHero": false,
+      "image": "szymon-face",
+      "name": "Szymon",
+      "content": "Siema, mam robotę."
+    }
   }
 }
