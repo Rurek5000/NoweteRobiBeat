@@ -151,7 +151,7 @@ export default class Game extends Phaser.Scene {
       this.scene.launch("dialogModal", { name: "grzesiek" });
   }
 
-  update(t: number, dt: number) {
+  update(dt: number) {
     if (!this.playerController) return;
     this.playerController.update(dt);
 
@@ -183,8 +183,5 @@ export default class Game extends Phaser.Scene {
       if (getChapter() == 0) setChapter(1);
       if (getChapter() == 4) setChapter(5);
     });
-    // events.on("close-grzesiek", () => {
-    //   this.scene.resume();
-    // });
   }
 }

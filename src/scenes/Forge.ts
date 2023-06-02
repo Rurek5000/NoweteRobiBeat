@@ -144,7 +144,7 @@ export default class Forge extends Phaser.Scene {
     this.matter.world.convertTilemapLayer(ground);
   }
 
-  update(t: number, dt: number) {
+  update(dt: number) {
     if (!this.playerController) return;
     this.playerController.update(dt);
 

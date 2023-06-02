@@ -3,7 +3,7 @@ import { getChapter } from "../globals";
 import { sharedInstance as events } from "./EventCenter";
 
 export default class DialogModal extends Phaser.Scene {
-  private bg!: Phaser.Physics.Matter.Factory.rectangle;
+  private bg!: any;
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   private index!: number;
   private image!: any;
@@ -57,7 +57,7 @@ export default class DialogModal extends Phaser.Scene {
         console.error("Błąd wczytywania pliku JSON:", error);
       });
   }
-  update(t: number, dt: number) {
+  update() {
     if (this.cursors.space.isDown && this.isWritten) {
       this.index++;
       if (this.index < Object.keys(this.jsonData).length) {
@@ -126,8 +126,8 @@ export default class DialogModal extends Phaser.Scene {
         if (length == i) this.isWritten = true;
       },
       repeat: length - 1,
-      delay: 1,
-      // delay: 35,
+      // delay: 1,
+      delay: 35,
     });
   }
 }

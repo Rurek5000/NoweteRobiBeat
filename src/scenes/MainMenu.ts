@@ -45,7 +45,7 @@ export default class DialogModal extends Phaser.Scene {
     mainText.setStroke("#000", 6);
     TweenHelper.flashElement(this, enterText);
   }
-  update(t: number, dt: number) {
+  update() {
     if (this.cursors.space.isDown) {
       this.scene.start(SceneKeys.Street);
       this.theme.stop();

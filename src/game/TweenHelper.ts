@@ -1,14 +1,14 @@
 export default class TweenHelper {
   static flashElement(
-    scene,
-    element,
+    scene: any,
+    element: Phaser.GameObjects.Text,
     repeat = true,
     easing = "Linear",
     overallDuration = 500,
     visiblePauseDuration = 500
   ) {
     if (scene && element) {
-      let flashDuration = overallDuration - visiblePauseDuration / 2;
+      const flashDuration = overallDuration - visiblePauseDuration / 2;
 
       scene.tweens.timeline({
         tweens: [
