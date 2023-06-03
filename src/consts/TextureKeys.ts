@@ -17,6 +17,10 @@ enum TextureKeys {
   Magazine = "magazine",
   Home = "home",
   Portal = "portal",
+  Grass = "grass",
+  GrassProps = "grass-props",
+  Background = "background",
+  Gryl = "gryl",
 }
 
 export default TextureKeys;

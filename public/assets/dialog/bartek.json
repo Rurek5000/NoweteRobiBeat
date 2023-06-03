@@ -75,13 +75,49 @@
       "isHero": true,
       "image": "grzesiek",
       "name": "Grzesiek",
-      "content": "Siema..."
+      "content": "Siema, masz przejściówkę z USB-C 2.0 quick big klamot \nna chuj w dupę Rurkowi bo ma stary telefon?"
     },
     "1": {
       "isHero": false,
       "image": "bartosz-face",
       "name": "Bartosz",
-      "content": "Teraz nie mogę bo chujoza braterska przyjechala"
+      "content": "Sempai!! \nMam wszystkie przejściówki. Pożyczę Ci tylko kot się wysra."
+    },
+    "2": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "A nie może sam tego zrobić?"
+    },
+    "3": {
+      "isHero": false,
+      "image": "bartosz-face",
+      "name": "Bartosz",
+      "content": "Muszę sprawdzić czy zrobił dobrze do kuwety."
+    },
+    "4": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "A chujoza braterska już pojechała?"
+    },
+    "5": {
+      "isHero": false,
+      "image": "bartosz-face",
+      "name": "Bartosz",
+      "content": "Ta... zostawił Zuze rodzicą i pojechali do międzyświecia"
+    },
+    "6": {
+      "isHero": true,
+      "image": "grzesiek",
+      "name": "Grzesiek",
+      "content": "Międzydupia, dobra chodź idziemy do Rurka z tym kablem i spadamy na gryl!"
+    },
+    "7": {
+      "isHero": false,
+      "image": "bartosz-face",
+      "name": "Bartosz",
+      "content": "Ale bendem go bił!"
     }
   },
   "6": {

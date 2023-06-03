@@ -1,101 +1,35 @@
 {
   "chapter": 1,
-  "0": {
-    "0": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
-      "content": "Siema..."
-    },
-    "1": {
-      "isHero": false,
-      "image": "bartosz",
-      "name": "Bartosz",
-      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
-    }
-  },
-  "1": {
-    "0": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
-      "content": "Siema..."
-    },
-    "1": {
-      "isHero": false,
-      "image": "bartosz",
-      "name": "Bartosz",
-      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
-    }
-  },
-  "2": {
-    "0": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
-      "content": "Siema..."
-    },
-    "1": {
-      "isHero": false,
-      "image": "bartosz",
-      "name": "Bartosz",
-      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
-    }
-  },
-  "3": {
-    "0": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
-      "content": "Siema..."
-    },
-    "1": {
-      "isHero": false,
-      "image": "bartosz",
-      "name": "Bartosz",
-      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
-    }
-  },
-  "4": {
-    "0": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
-      "content": "Siema..."
-    },
-    "1": {
-      "isHero": false,
-      "image": "bartosz",
-      "name": "Bartosz",
-      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
-    }
-  },
-  "5": {
-    "0": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
-      "content": "Siema..."
-    },
-    "1": {
-      "isHero": false,
-      "image": "bartosz",
-      "name": "Bartosz",
-      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
-    }
-  },
   "6": {
     "0": {
-      "isHero": true,
-      "image": "grzesiek",
-      "name": "Grzesiek",
-      "content": "Siema..."
+      "isHero": false,
+      "image": "bartosz-face",
+      "name": "Bartosz",
+      "content": "Stolat stolat!!"
     },
     "1": {
       "isHero": false,
-      "image": "bartosz",
-      "name": "Bartosz",
-      "content": "Teraz nie mogę bo chujoza braterska przyjechała."
+      "image": "pawel-face",
+      "name": "Paweł",
+      "content": "Żebyś rosnął! Żeby pękło!"
+    },
+    "2": {
+      "isHero": false,
+      "image": "pawel-face",
+      "name": "Paweł",
+      "content": "Żebyś rosnął! Żeby pękło!"
+    },
+    "3": {
+      "isHero": false,
+      "image": "szymon-face",
+      "name": "Szymon",
+      "content": "Tego samego co Paweł!."
+    },
+    "4": {
+      "isHero": false,
+      "image": "kacper",
+      "name": "Kacper",
+      "content": "Najlepszego ziom, od Kacperka i ekipy :)"
     }
   }
 }

@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+import Phaser, { Scene } from "phaser";
 import AnimationKeys from "../consts/AnimationKeys";
 import Hero from "../game/Hero";
 import TextureKeys from "../consts/TextureKeys";
@@ -15,6 +15,7 @@ export default class Home extends Phaser.Scene {
   private playerController?: PlayerController;
   private home!: FloatingText;
   private bartosz!: Npc;
+  private theme!: any;
 
   constructor() {
     super("home");
@@ -29,6 +30,8 @@ export default class Home extends Phaser.Scene {
     const buildings = map.addTilesetImage("Buildings", "buildings");
     const forgeProps = map.addTilesetImage("Forge Props", "forge-props");
     const decoration = map.addTilesetImage("Props-01", "props-01");
+    this.theme = this.sound.add("home-sound");
+    this.theme.play();
 
     map.createLayer("bg", buildings);
     map.createLayer("decoration", [decoration, forgeProps, buildings]);
@@ -143,8 +146,11 @@ export default class Home extends Phaser.Scene {
 
     this.matter.overlap(this.home.obj, [this.hero], () => {
       this.home.showText();
-      if (this.cursors.space.isDown)
-        this.scene.start(SceneKeys.Street, { before: "home" });
+      if (this.cursors.space.isDown) {
+        this.theme.stop();
+        if (getChapter() == 6) this.scene.start(SceneKeys.Gryl, { before: "" });
+        else this.scene.start(SceneKeys.Street, { before: "home" });
+      }
     });
     this.matter.overlap(this.bartosz, [this.hero], () => {
       this.bartosz.showText();
@@ -159,7 +165,9 @@ export default class Home extends Phaser.Scene {
 
     events.on(`close-bartek`, () => {
       this.scene.resume();
-      if (getChapter() == 5) setChapter(6);
+      if (getChapter() == 5) {
+        setChapter(6);
+      }
     });
   }
 }

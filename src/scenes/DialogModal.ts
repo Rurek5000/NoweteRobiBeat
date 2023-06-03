@@ -121,8 +121,8 @@ export default class DialogModal extends Phaser.Scene {
         if (length == i) this.isWritten = true;
       },
       repeat: length - 1,
-      // delay: 1,
-      delay: 35,
+      delay: 1,
+      // delay: 35,
     });
   }
 }

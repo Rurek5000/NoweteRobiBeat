@@ -45,6 +45,11 @@ export default class Preloader extends Phaser.Scene {
       "assets/npc/portal.json"
     );
 
+    this.load.audio("coconut", "./assets/audio/coconut.mp3");
+    this.load.audio("forge-sound", "./assets/audio/forge.mp3");
+    this.load.audio("street-sound", "./assets/audio/street.mp3");
+    this.load.audio("home-sound", "./assets/audio/home.mp3");
+
     this.load.image("main-menu-bg", "assets/main-menu-bg.jpg");
     this.load.image(TextureKeys.Tiles, "assets/texture/Tiles.png");
     this.load.image(TextureKeys.BaseColor, "assets/texture/Base-Color.png");
@@ -52,6 +57,9 @@ export default class Preloader extends Phaser.Scene {
       TextureKeys.BaseColorForge,
       "assets/texture/Base-Color-Forge.png"
     );
+    this.load.image(TextureKeys.Grass, "assets/texture/grass.png");
+    this.load.image(TextureKeys.GrassProps, "assets/texture/grass-props.png");
+    this.load.image(TextureKeys.Background, "assets/texture/Background.png");
     this.load.image(TextureKeys.Forge, "assets/texture/Forge.png");
     this.load.image(TextureKeys.ForgeProps, "assets/texture/Forge-props.png");
     this.load.image(TextureKeys.Buildings, "assets/texture/Buildings.png");
@@ -65,10 +73,9 @@ export default class Preloader extends Phaser.Scene {
     this.load.tilemapTiledJSON(TextureKeys.Forge, "assets/kuznia.json");
     this.load.tilemapTiledJSON(TextureKeys.Magazine, "assets/magazine.json");
     this.load.tilemapTiledJSON(TextureKeys.Home, "assets/home.json");
+    this.load.tilemapTiledJSON(TextureKeys.Gryl, "assets/gryl.json");
   }
   create() {
-    // this.scene.start(SceneKeys.MainMenu);
-    this.scene.start(SceneKeys.Street);
-    // this.scene.start(SceneKeys.Home);
+    this.scene.start(SceneKeys.MainMenu);
   }
 }

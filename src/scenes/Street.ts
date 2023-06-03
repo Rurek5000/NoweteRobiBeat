@@ -17,6 +17,7 @@ export default class Game extends Phaser.Scene {
   private forge!: FloatingText;
   private home!: FloatingText;
   private before!: string;
+  private theme!: any;
 
   constructor() {
     super("street");
@@ -36,6 +37,9 @@ export default class Game extends Phaser.Scene {
     );
     const buildings = map.addTilesetImage("Buildings", "buildings");
     const decoration = map.addTilesetImage("Props-01", "props-01");
+
+    this.theme = this.sound.add("street-sound");
+    this.theme.play();
 
     this.before = data.before ? `-${data.before}` : "";
 
@@ -199,12 +203,14 @@ export default class Game extends Phaser.Scene {
     this.matter.overlap(this.forge.obj, [this.hero], () => {
       this.forge.showText();
       if (this.cursors.space.isDown) {
+        this.theme.stop();
         this.scene.start(SceneKeys.Forge, { before: "" });
       }
     });
     this.matter.overlap(this.home.obj, [this.hero], () => {
       this.home.showText();
       if (this.cursors.space.isDown) {
+        this.theme.stop();
         this.scene.start(SceneKeys.Home, { before: "" });
       }
     });

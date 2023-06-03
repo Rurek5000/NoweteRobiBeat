@@ -25,10 +25,6 @@ export default class Magazine extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
   }
 
-  preload() {
-    this.load.audio("coconut", "./assets/audio/coconut.mp3");
-  }
-
   create() {
     const map = this.make.tilemap({ key: "magazine" });
     const tileset = map.addTilesetImage("Tiles", "tiles");
@@ -150,8 +146,10 @@ export default class Magazine extends Phaser.Scene {
 
     this.matter.overlap(this.home.obj, [this.hero], () => {
       this.home.showText();
-      if (this.cursors.space.isDown)
+      if (this.cursors.space.isDown) {
+        this.theme.stop();
         this.scene.start(SceneKeys.Forge, { before: "magazine" });
+      }
     });
     this.matter.overlap(this.pawel, [this.hero], () => {
       this.pawel.showText();

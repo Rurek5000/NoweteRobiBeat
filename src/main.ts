@@ -7,6 +7,7 @@ import Preloader from "./scenes/Preloader";
 import MainMenu from "./scenes/MainMenu";
 import Magazine from "./scenes/Magazine";
 import Home from "./scenes/Home";
+import Gryl from "./scenes/Gryl";
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
@@ -16,10 +17,19 @@ const config: Phaser.Types.Core.GameConfig = {
   physics: {
     default: "matter",
     matter: {
-      debug: true,
+      debug: false,
     },
   },
-  scene: [Preloader, MainMenu, Street, Forge, Magazine, Home, DialogModal],
+  scene: [
+    Preloader,
+    MainMenu,
+    Street,
+    Forge,
+    Magazine,
+    Home,
+    Gryl,
+    DialogModal,
+  ],
 };
 
 export default new Phaser.Game(config);

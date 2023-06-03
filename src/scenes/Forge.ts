@@ -17,6 +17,7 @@ export default class Forge extends Phaser.Scene {
   private magazine!: FloatingText;
   private szymon!: Npc;
   private before!: string;
+  private theme!: any;
 
   constructor() {
     super("forge");
@@ -37,6 +38,9 @@ export default class Forge extends Phaser.Scene {
     const decoration = map.addTilesetImage("Props-01", "props-01");
 
     this.before = data.before ? `-${data.before}` : "";
+
+    this.theme = this.sound.add("forge-sound");
+    this.theme.play();
 
     map.createLayer("bg", [buildings, baseColor]);
     map.createLayer("bg_2", forge);
@@ -188,12 +192,17 @@ export default class Forge extends Phaser.Scene {
 
     this.matter.overlap(this.home.obj, [this.hero], () => {
       this.home.showText();
-      if (this.cursors.space.isDown)
+      if (this.cursors.space.isDown) {
+        this.theme.stop();
         this.scene.start(SceneKeys.Street, { before: "forge" });
+      }
     });
     this.matter.overlap(this.magazine.obj, [this.hero], () => {
       this.magazine.showText();
-      if (this.cursors.space.isDown) this.scene.start(SceneKeys.Magazine);
+      if (this.cursors.space.isDown) {
+        this.theme.stop();
+        this.scene.start(SceneKeys.Magazine);
+      }
     });
     this.matter.overlap(this.szymon, [this.hero], () => {
       this.szymon.showText();
