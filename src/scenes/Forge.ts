@@ -92,7 +92,28 @@ export default class Forge extends Phaser.Scene {
                 isSensor: true,
               }
             );
-            this.home = new FloatingText(this, rec, "Home (press spacebar)");
+            this.home = new FloatingText(this, rec, "Ulica (spacja)");
+            const portal = new Npc(
+              this,
+              x + width * 0.5,
+              y,
+              TextureKeys.Portal
+            );
+            portal.setStatic(true);
+            portal.setSensor(true);
+            portal.anims.create({
+              key: AnimationKeys.PortalLoop,
+              frameRate: 4,
+              frames: portal.anims.generateFrameNames("portal", {
+                start: 0,
+                end: 5,
+                prefix: "portal-loop-",
+                suffix: ".png",
+              }),
+              repeat: -1,
+            });
+
+            portal.play(AnimationKeys.PortalLoop);
           }
           break;
         case "magazine":
@@ -107,11 +128,28 @@ export default class Forge extends Phaser.Scene {
                 isSensor: true,
               }
             );
-            this.magazine = new FloatingText(
+            this.magazine = new FloatingText(this, rec, "Magazyn (spacja)");
+            const portal = new Npc(
               this,
-              rec,
-              "Home (press spacebar)"
+              x + width * 0.5,
+              y,
+              TextureKeys.Portal
             );
+            portal.setStatic(true);
+            portal.setSensor(true);
+            portal.anims.create({
+              key: AnimationKeys.PortalLoop,
+              frameRate: 4,
+              frames: portal.anims.generateFrameNames("portal", {
+                start: 0,
+                end: 5,
+                prefix: "portal-loop-",
+                suffix: ".png",
+              }),
+              repeat: -1,
+            });
+
+            portal.play(AnimationKeys.PortalLoop);
           }
           break;
         case "szymon":

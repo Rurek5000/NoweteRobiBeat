@@ -15,6 +15,7 @@ export default class Magazine extends Phaser.Scene {
   private playerController?: PlayerController;
   private home!: FloatingText;
   private pawel!: Npc;
+  private theme!: any;
 
   constructor() {
     super("magazine");
@@ -24,10 +25,17 @@ export default class Magazine extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
   }
 
+  preload() {
+    this.load.audio("coconut", "./assets/audio/coconut.mp3");
+  }
+
   create() {
     const map = this.make.tilemap({ key: "magazine" });
     const tileset = map.addTilesetImage("Tiles", "tiles");
     const buildings = map.addTilesetImage("Buildings", "buildings");
+
+    this.theme = this.sound.add("coconut");
+    this.theme.play();
 
     map.createLayer("bg", buildings);
     map.createLayer("decoration", buildings);
@@ -82,7 +90,28 @@ export default class Magazine extends Phaser.Scene {
                 isSensor: true,
               }
             );
-            this.home = new FloatingText(this, rec, "Home (press spacebar)");
+            this.home = new FloatingText(this, rec, "Kuźnia (spacja)");
+            const portal = new Npc(
+              this,
+              x + width * 0.5,
+              y,
+              TextureKeys.Portal
+            );
+            portal.setStatic(true);
+            portal.setSensor(true);
+            portal.anims.create({
+              key: AnimationKeys.PortalLoop,
+              frameRate: 4,
+              frames: portal.anims.generateFrameNames("portal", {
+                start: 0,
+                end: 5,
+                prefix: "portal-loop-",
+                suffix: ".png",
+              }),
+              repeat: -1,
+            });
+
+            portal.play(AnimationKeys.PortalLoop);
           }
           break;
         case "pawel":

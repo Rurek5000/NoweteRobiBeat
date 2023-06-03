@@ -47,8 +47,6 @@ export default class DialogModal extends Phaser.Scene {
     fetch(`./assets/dialog/${data.name}.json`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("chapter", getChapter());
-        console.log(data[getChapter()]);
         this.jsonData = data[getChapter()];
 
         this.showSpeech(this.jsonData, this.index, this.bg);
@@ -63,7 +61,6 @@ export default class DialogModal extends Phaser.Scene {
       if (this.index < Object.keys(this.jsonData).length) {
         this.showSpeech(this.jsonData, this.index, this.bg);
       } else {
-        console.log(this.name);
         events.emit(`close-${this.name}`);
         this.scene.stop();
       }
@@ -82,8 +79,6 @@ export default class DialogModal extends Phaser.Scene {
 
     const paddingX = 60;
     const paddingY = 30;
-
-    console.log(value);
 
     this.image = this.matter.add.image(0, 0, value.image);
     this.text = this.add.text(leftTopX, leftTopY, value.content, {

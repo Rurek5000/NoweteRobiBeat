@@ -39,6 +39,11 @@ export default class Preloader extends Phaser.Scene {
       "assets/npc/bartosz.png",
       "assets/npc/bartosz.json"
     );
+    this.load.atlas(
+      TextureKeys.Portal,
+      "assets/npc/portal.png",
+      "assets/npc/portal.json"
+    );
 
     this.load.image("main-menu-bg", "assets/main-menu-bg.jpg");
     this.load.image(TextureKeys.Tiles, "assets/texture/Tiles.png");
@@ -62,7 +67,8 @@ export default class Preloader extends Phaser.Scene {
     this.load.tilemapTiledJSON(TextureKeys.Home, "assets/home.json");
   }
   create() {
-    this.scene.start(SceneKeys.MainMenu);
+    // this.scene.start(SceneKeys.MainMenu);
+    this.scene.start(SceneKeys.Street);
     // this.scene.start(SceneKeys.Home);
   }
 }

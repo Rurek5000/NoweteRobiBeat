@@ -16,6 +16,7 @@ enum TextureKeys {
   ForgeProps = "forge-props",
   Magazine = "magazine",
   Home = "home",
+  Portal = "portal",
 }
 
 export default TextureKeys;

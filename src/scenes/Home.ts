@@ -83,12 +83,32 @@ export default class Home extends Phaser.Scene {
                 isSensor: true,
               }
             );
-            this.home = new FloatingText(this, rec, "Home (press spacebar)");
+            this.home = new FloatingText(this, rec, "Ulica (spacja)");
+            const portal = new Npc(
+              this,
+              x + width * 0.5,
+              y,
+              TextureKeys.Portal
+            );
+            portal.setStatic(true);
+            portal.setSensor(true);
+            portal.anims.create({
+              key: AnimationKeys.PortalLoop,
+              frameRate: 4,
+              frames: portal.anims.generateFrameNames("portal", {
+                start: 0,
+                end: 5,
+                prefix: "portal-loop-",
+                suffix: ".png",
+              }),
+              repeat: -1,
+            });
+
+            portal.play(AnimationKeys.PortalLoop);
           }
           break;
         case "lev":
           {
-            console.log("obsraniec");
             this.bartosz = new Npc(
               this,
               x + width * 0.5,

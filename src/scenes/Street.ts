@@ -99,6 +99,27 @@ export default class Game extends Phaser.Scene {
             );
 
             this.forge = new FloatingText(this, rec, "Kuźnia (spacja)");
+            const portal = new Npc(
+              this,
+              x + width * 0.5,
+              y,
+              TextureKeys.Portal
+            );
+            portal.setStatic(true);
+            portal.setSensor(true);
+            portal.anims.create({
+              key: AnimationKeys.PortalLoop,
+              frameRate: 4,
+              frames: portal.anims.generateFrameNames("portal", {
+                start: 0,
+                end: 5,
+                prefix: "portal-loop-",
+                suffix: ".png",
+              }),
+              repeat: -1,
+            });
+
+            portal.play(AnimationKeys.PortalLoop);
           }
           break;
         case "home":
@@ -113,8 +134,28 @@ export default class Game extends Phaser.Scene {
                 isSensor: true,
               }
             );
-
             this.home = new FloatingText(this, rec, "Bartek (spacja)");
+            const portal = new Npc(
+              this,
+              x + width * 0.5,
+              y,
+              TextureKeys.Portal
+            );
+            portal.setStatic(true);
+            portal.setSensor(true);
+            portal.anims.create({
+              key: AnimationKeys.PortalLoop,
+              frameRate: 4,
+              frames: portal.anims.generateFrameNames("portal", {
+                start: 0,
+                end: 5,
+                prefix: "portal-loop-",
+                suffix: ".png",
+              }),
+              repeat: -1,
+            });
+
+            portal.play(AnimationKeys.PortalLoop);
           }
           break;
         case "rurek":
@@ -162,7 +203,7 @@ export default class Game extends Phaser.Scene {
       }
     });
     this.matter.overlap(this.home.obj, [this.hero], () => {
-      this.forge.showText();
+      this.home.showText();
       if (this.cursors.space.isDown) {
         this.scene.start(SceneKeys.Home, { before: "" });
       }

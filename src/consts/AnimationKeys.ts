@@ -6,6 +6,7 @@ enum AnimationKeys {
   SzymonIdle = "szymon-idle",
   PawelIdle = "pawel-idle",
   BartoszIdle = "bartosz-idle",
+  PortalLoop = "portal-loop",
 }
 
 export default AnimationKeys;
