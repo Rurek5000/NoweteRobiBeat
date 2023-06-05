@@ -2,17 +2,17 @@ import Phaser from "phaser";
 import AnimationKeys from "../consts/AnimationKeys";
 import Hero from "../game/Hero";
 import TextureKeys from "../consts/TextureKeys";
-import PlayerController from "../game/PlayerController";
-import FloatingText from "../game/FloatingText";
-import SceneKeys from "../consts/SceneKeys";
-import { sharedInstance as events } from "./EventCenter";
+// import PlayerController from "../game/PlayerController";
+// import FloatingText from "../game/FloatingText";
+// import SceneKeys from "../consts/SceneKeys";
+// import { sharedInstance as events } from "./EventCenter";
 import Npc from "../game/Npc";
-import { getChapter, setChapter } from "../globals";
+// import { getChapter, setChapter } from "../globals";
 
 export default class Home extends Phaser.Scene {
-  private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
+  // private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   private hero!: Hero;
-  private playerController?: PlayerController;
+  // private playerController?: PlayerController;
   private bartosz!: Npc;
   private rurek!: Npc;
   private szymon!: Npc;
@@ -23,9 +23,9 @@ export default class Home extends Phaser.Scene {
     super("gryl");
   }
 
-  init() {
-    this.cursors = this.input.keyboard.createCursorKeys();
-  }
+  // init() {
+  //   this.cursors = this.input.keyboard.createCursorKeys();
+  // }
 
   create() {
     const map = this.make.tilemap({ key: "gryl" });
@@ -45,16 +45,16 @@ export default class Home extends Phaser.Scene {
     const objectsLayer = map.getObjectLayer("objects");
     const camera = this.cameras.main;
     objectsLayer.objects.forEach((objData) => {
-      const { x = 0, y = 0, name, width = 0, height = 0 } = objData;
+      const { x = 0, y = 0, name, width = 0 } = objData;
       switch (name) {
         case `spawn`:
           {
             this.hero = new Hero(this, x + width * 0.5, y, TextureKeys.Hero);
             this.hero.play(AnimationKeys.HeroWalk).setFixedRotation();
-            this.playerController = new PlayerController(
-              this.hero,
-              this.cursors
-            );
+            // this.playerController = new PlayerController(
+            //   this.hero,
+            //   this.cursors
+            // );
             camera.startFollow(
               this.hero,
               undefined,

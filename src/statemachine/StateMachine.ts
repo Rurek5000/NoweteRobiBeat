@@ -18,6 +18,7 @@ export default class StateMachine {
   constructor(context?: any, name?: string) {
     this.context = context;
     this.name = name ?? "fsm";
+    console.log(this.name);
   }
 
   isCurrentState(name: string) {
